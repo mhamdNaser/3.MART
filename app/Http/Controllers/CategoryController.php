@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.categories');
     }
 
     /**
@@ -35,7 +35,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = new category;
+        $category->Category_Name = $request->Category_Name;
+        $category->Category_Description = $request->Category_Description;
+        $category->Category_Image = $request->Category_Image;
+        $category->save();
     }
 
     /**
@@ -46,7 +50,8 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        $categorys = Category::find($category);
+        return view('category')->with('category', $categorys);
     }
 
     /**
