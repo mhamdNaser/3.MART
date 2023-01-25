@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,4 +18,7 @@ use App\Http\Controllers\CategoryController;
 Route::get('/', function () {
     return view('index');
 });
+
 Route::resource('categories', CategoryController::class);
+
+Route::resource('user', UserController::class);
