@@ -40,7 +40,7 @@
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" 0="pages-profile.html">
+						<a class="sidebar-link" href="profile">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
             </a>
 					</li>
