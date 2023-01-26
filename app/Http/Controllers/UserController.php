@@ -44,6 +44,7 @@ class UserController extends Controller
 
         $user_img = $request->file('image')->getClientOriginalName();
         $request->file('image')->storeAs('public/userimage',$user_img);
+
         // insert user
         $user = new user();
         $user->name = $request->name;
@@ -78,6 +79,8 @@ class UserController extends Controller
     public function edit($id)
     {
         //
+        $user = User::findOrFail($id);
+        return view('admin.userTable',compact('user'));
     }
 
     /**
@@ -90,6 +93,20 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $user_img = $request->file('image')->getClientOriginalName();
+        $request->file('image')->storeAs('public/userimage',$user_img);
+
+        // Update User
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->password = $request->password;
+        $user->User_Image = $user_img;
+        $user->save();
+        return redirect()->route('user.index');
+
     }
 
     /**
