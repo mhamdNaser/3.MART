@@ -1,19 +1,16 @@
 <?php
 
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
+
+// Route::get('/', function () {
+//     return view('index');
+// });
+// Route::resource('services', ServiceController::class);
 
 Route::get('/home', function () {
     return view('home');
@@ -43,9 +40,15 @@ Route::get('dashboard', function () {
     return view('index');
 });
 
+<<<<<<< HEAD
 Route::get('profile', function () {
     return view('admin/profile');
 });
+=======
+Route::resource('Service', ServiceController::class);
+// Route::resource('Service.edit/{id}',ServiceController::class);
+
+>>>>>>> dd2235d109d861cf1bc32957480f2a1dc7c9d6bc
 Route::resource('categories', CategoryController::class);
 
 Route::resource('user', UserController::class);

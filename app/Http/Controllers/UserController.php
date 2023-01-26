@@ -80,7 +80,7 @@ class UserController extends Controller
     {
         //
         $user = User::findOrFail($id);
-        return view('admin.userTable',compact('user'));
+        return view('admin.updateUser',compact('user'));
     }
 
     /**
@@ -105,7 +105,8 @@ class UserController extends Controller
         $user->password = $request->password;
         $user->User_Image = $user_img;
         $user->save();
-        return redirect()->route('user.index');
+        return redirect()->route('user.userTable');
+
 
     }
 
@@ -118,5 +119,11 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+        $user = User::find($id);
+        $user->delete();
+        return back()->with('success','User deleted successfully');
+        return redirect(route('user.index'));
+
+
     }
 }
