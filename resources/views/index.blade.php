@@ -7,7 +7,7 @@
 active
 @endsection
 
-@section('contenar')
+@section('container')
     
 
 @endsection
