@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('profile', function () {
-    return view('dashboard/profile');
+    return view('admin/profile');
 });
+
+Route::resource('categories', CategoryController::class);
