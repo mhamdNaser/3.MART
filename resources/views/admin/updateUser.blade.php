@@ -174,7 +174,7 @@ active
                 <br><br>
                     <h1>Update User</h1>
                     <br><br>
-                    <form class="form-group mx-sm-3 mb-2" action="{{route('user.update',$user->id)}}" method="POST" enctype="multipart/form-data">
+                    <form class="form-group mx-sm-3 mb-2" action="{{url('user.update',$user->id)}}" method="POST" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
 

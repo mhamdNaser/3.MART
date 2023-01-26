@@ -105,7 +105,8 @@ class UserController extends Controller
         $user->password = $request->password;
         $user->User_Image = $user_img;
         $user->save();
-        return redirect()->route('user.index');
+        return redirect()->route('user.userTable');
+
 
     }
 
@@ -115,8 +116,14 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user,$id)
     {
         //
+        $user = User::find($id);
+        $user->delete();
+        session()->flash('success','User deleted successfully');
+        return redirect(route('user.index'));
+
+
     }
 }
