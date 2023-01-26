@@ -7,7 +7,7 @@ Services
 active
 @endsection
 
-@section('contenar')
+@section('container')
 
 
 <body>
@@ -30,9 +30,9 @@ active
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>S.No</th>
+                    {{-- <th>S.No</th> --}}
                     <th>service_name</th>
-                    <th>category_id</th>
+                    <th>categoryid</th>
                     <th>Service_Description</th>
                     <th>Service_Image</th> 
                     <th>Service_Price</th> 
@@ -43,7 +43,7 @@ active
             <tbody>
                 @foreach ($services as $service)
                     <tr>
-                      <td>{{ $service->id }}</td>
+                      {{-- <td>{{ $service->id }}</td> --}}
                       <td>{{ $service->Service_Name }}</td>
                       <td>{{ $service->Category_id }}</td>
                       <td>{{ $service->Service_Description }}</td>

@@ -8,7 +8,7 @@ Services
 active
 @endsection
 
-@section('contenar')
+@section('container')
 
 <body>
    
