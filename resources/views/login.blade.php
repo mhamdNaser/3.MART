@@ -7,7 +7,7 @@
     <br><br>
         <h1>Add User</h1>
         <br><br>
-        <form class="form-group mx-sm-3 mb-2" action="{{route('user.store')}}" method="POST" enctype="multipart/form-data">
+        <form class="form-group mx-sm-3 mb-2" action="{{route('go.login')}}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group col-md-4 mb-3">

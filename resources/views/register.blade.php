@@ -3,36 +3,37 @@
 @section('title', 'register')
 
 @section('content')
-<div class="container-fluid">
-    <br><br>
-        <h1>Add User</h1>
-        <br><br>
-        <form class="form-group mx-sm-3 mb-2" action="{{route('user.store')}}" method="POST" enctype="multipart/form-data">
-            @csrf
+    <div class="row m-5">
+        <div class="col-lg-8 p-5 bg-white">
+            <form class="form-group mx-sm-3 mb-2" action="{{route('register')}}" method="POST" enctype="multipart/form-data">
+                @csrf
 
-            <div class="form-group col-md-4 mb-3">
-              <label>User Name</label>
-              <input type="text" class="form-control" name="name"  placeholder="Enter User Name">
-            </div>
-            <div class="form-group col-md-4 mb-3">
-              <label >Email</label>
-              <input type="email" class="form-control" name="email" placeholder="Enter User E-mail">
-            </div>
-            <div class="form-group col-md-4 mb-3">
-              <label >Phone Number</label>
-              <input type="text" class="form-control" name="phone" placeholder="Enter User Phone Number">
-            </div>
-            <div class="form-group col-md-4 mb-3">
-              <label >Password</label>
-              <input type="password" class="form-control" name="password" placeholder="Enter User Password">
-            </div>
-            <div class="form-group col-md-4 mb-3">
-                <label >User Image</label><br>
-                <input type="file" class="block w-full text-sm text-gray-500     file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm    file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"  name="image">
-              </div>
-            <button type="submit" class="btn btn-dark">Add</button>
-          </form>
+                <h2 class="ms-3">Register</h2>
+                <div class="form-group col-lg-10 mb-3">
+                    <label>User Name</label>
+                    <input type="text" class="form-control" name="name"  placeholder="Enter User Name">
+                </div>
+                <div class="form-group col-lg-10 mb-3">
+                    <label >Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="Enter User E-mail">
+                </div>
+                <div class="form-group col-lg-10 mb-3">
+                    <label >phone</label>
+                    <input type="number" class="form-control" name="phone" placeholder="Enter User Phone">
+                </div>
+                <div class="form-group col-lg-10 mb-3">
+                    <label >Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Enter User Password">
+                </div>
+                <div class="form-group col-lg-10 mb-3">
+                    <label >Repeate Password</label>
+                    <input type="password" class="form-control" name="repassword" placeholder="Enter User Password">
+                    </div>
+                <div class="form-group col-lg-10 mb-3">
+                    <button type="submit" class="btn btn-dark ms-3">Add</button>
+                </div>
 
-</div>
-
+            </form>
+        </div>
+    </div>
 @endsection

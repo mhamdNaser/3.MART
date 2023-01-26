@@ -6,7 +6,26 @@
 
 
   <!-- info section -->
-  <section class="info_section ">
+  <section class="info_section">
+    <div class="row justify-content-center align-items-center g-2 mb-4">
+        <div class="navbar navbar-expand navbar-dark">
+            <ul class="navbar-nav flex-grow-1 d-lg-none d-flex text-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="" ><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="" ><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="" ><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="" ><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <div class="container">
         <h4>
             Get In Touch

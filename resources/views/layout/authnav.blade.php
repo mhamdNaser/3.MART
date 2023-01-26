@@ -1,21 +1,20 @@
 <div class="container-fluid">
-    <nav class="row navbar navbar-expand-lg navbar-dark d-none d-lg-flex">
-        <ul class="navbar-nav col-lg-1"></ul>
-        <ul class="navbar-nav col-lg-8">
-            <li class="nav-item me-2">
+    <nav class="navbar navbar-expand navbar-dark">
+        <ul class="navbar-nav flex-grow-1 d-none d-sm-flex">
+            <li class="nav-item">
                 <a class="nav-link" href="" ><i class="fa fa-facebook" aria-hidden="true"></i></a>
             </li>
-            <li class="nav-item me-2">
+            <li class="nav-item">
                 <a class="nav-link" href="" ><i class="fa fa-twitter" aria-hidden="true"></i></a>
             </li>
-            <li class="nav-item me-2">
+            <li class="nav-item">
                 <a class="nav-link" href="" ><i class="fa fa-youtube" aria-hidden="true"></i></a>
             </li>
-            <li class="nav-item me-2">
+            <li class="nav-item">
                 <a class="nav-link" href="" ><i class="fa fa-instagram" aria-hidden="true"></i></a>
             </li>
         </ul>
-        <ul class="navbar-nav col-lg-3">
+        <ul class="navbar-nav d-lg-flex text-center">
             @if (Route::has('login'))
                 @auth
                     <li class="nav-item dropdown">
@@ -41,20 +40,23 @@
                         </ul>
                     </li>
                     @endif
+                    <li class="nav-item">
+                        <a class="nav-link" href="login" title="Login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register" title="register">Register</a>
+                    </li>
+                    <li><a class="nav-link" href="logout">Log Out</a></li>
+                    <li class="nav-item">
+                        <a href="/cart" class="nav-link" title="cart">
+                        <i class="fa fa-opencart ms-2"></i>
+                        <span id="" class="badge rounded-pill mypimarybg cartelement" alt="Notifications" style="font-size: 0.6rem; margin-left : -10px">2</span>
+                        </a>
+                    </li>
             @else
-                <li class="nav-item me-2">
-                    <a class="nav-link" href="login" title="Login">Login<i class="fa fa-sign-out ms-2"></i></a>
-                </li>
-                <li class="nav-item me-2">
-                    <a class="nav-link" href="register" title="register">Register<i class="fa fa-cogs ms-2"></i></a>
-                </li>
-                <li class="nav-item me-2">
-                    <a href="/cart" class="nav-link" title="cart">
-                    <i class="fa fa-opencart ms-2"></i>
-                    <span id="" class="badge rounded-pill mypimarybg cartelement" alt="Notifications" style="font-size: 0.6rem; margin-left : -10px">2</span>
-                    </a>
-                </li>
+
             @endif
+
         </ul>
     </nav>
 </div>
