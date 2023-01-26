@@ -88,11 +88,12 @@ active
                                             @csrf
                                             @method('DELETE')
 
-                                            <button type="submit">Delete</button>
+                                            <button type="submit" class="btn btn-danger">Delete</button>
 
                                             {{-- <a href=""><i class="fa-solid fa-trash-can"></i></a> --}}
+
                                         </form>
-                                        <a href="{{route('user.edit', $user->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <a href="{{route('user.edit', $user->id)}}"><button type="submit" class="btn btn-warning">Edit</button></a>
 
 
 
