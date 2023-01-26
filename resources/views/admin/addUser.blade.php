@@ -1,3 +1,16 @@
+
+{{-- @extends('layout.navbar')
+@section('title')
+Users
+@endsection
+
+@section('user_active')
+active
+@endsection --}}
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,14 +23,16 @@
         <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="shortcut icon" href="assets/img/icons/icon-48x48.png" />
+        <link rel="shortcut icon" href="../../../assets/img/icons/icon-48x48.png" />
 
         <link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
         <title>@yield('title')</title>
-        
-        <link href="{{ URL::asset('assets/css/app.css') }}" rel="stylesheet">
-        <link href="{{ URL::asset('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap') }}" rel="stylesheet">
+
+        <link href="../../../assets/css/app.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     </head>
 </head>
 <body>
@@ -91,7 +106,7 @@
               </a>
 
                             <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="{{ URL::asset('assets/img/avatars/avatar.jpg') }}" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+                <img src="../../../assets/img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
               </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
@@ -109,10 +124,37 @@
 
 
 
+    <div class="container-fluid">
+        <br><br>
+            <h1>Add User</h1>
+            <br><br>
+            <form class="form-group mx-sm-3 mb-2" action="{{route('user.store')}}" method="POST" enctype="multipart/form-data">
+                @csrf
 
-            @yield('button')
+                <div class="form-group col-md-4 mb-3">
+                  <label">User Name</label>
+                  <input type="text" class="form-control" name="name"  placeholder="Enter User Name">
+                </div>
+                <div class="form-group col-md-4 mb-3">
+                  <label >Email</label>
+                  <input type="email" class="form-control" name="email" placeholder="Enter User E-mail">
+                </div>
+                <div class="form-group col-md-4 mb-3">
+                  <label >Phone Number</label>
+                  <input type="text" class="form-control" name="phone" placeholder="Enter User Phone Number">
+                </div>
+                <div class="form-group col-md-4 mb-3">
+                  <label >Password</label>
+                  <input type="password" class="form-control" name="password" placeholder="Enter User Password">
+                </div>
+                <div class="form-group col-md-4 mb-3">
+                    <label >User Image</label><br>
+                    <input type="file" class="block w-full text-sm text-gray-500     file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm    file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"  name="image">
+                  </div>
+                <button type="submit" class="btn btn-dark">Add</button>
+              </form>
 
-            @yield('container')
+    </div>
 
 
 
@@ -131,7 +173,7 @@
 
 
 
-            <script src="{{ URL::asset('assets/js/app.js') }}"></script>
+            <script src="../../../assets/js/app.js"></script>
 
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
