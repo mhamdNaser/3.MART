@@ -7,6 +7,11 @@
 active
 @endsection
 
+<<<<<<< HEAD
+@section('contenar')
+
+@endsection
+=======
 @section('container')
 <<<<<<< HEAD
 =======
@@ -15,3 +20,4 @@ active
 
 
 @endsection
+>>>>>>> 35064157c8bcdcc9d83cdde08e1cfaf108881c38

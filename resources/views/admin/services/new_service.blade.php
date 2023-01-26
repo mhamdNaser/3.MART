@@ -8,16 +8,15 @@
         <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
         <meta name="author" content="AdminKit">
         <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
-<<<<<<< HEAD
     
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="shortcut icon" href="assets/img/icons/icon-48x48.png" />
+        <link rel="shortcut icon" href="../../../assets/img/icons/icon-48x48.png" />
     
         <link rel="canonical" href="https://demo-basic.adminkit.io/" />
     
-        <title>@yield('title')</title>
+        <title>Services</title>
     
-        <link href="{{ URL::asset('assets/css/app.css') }}" rel="stylesheet">
+        <link href="../../../assets/css/app.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     </head>
 </head>
@@ -26,43 +25,19 @@
     
         
     
-=======
-
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="shortcut icon" href="assets/img/icons/icon-48x48.png" />
-
-        <link rel="canonical" href="https://demo-basic.adminkit.io/" />
-
-        <title>@yield('title')</title>
-        
-        <link href="{{ URL::asset('assets/css/app.css') }}" rel="stylesheet">
-        <link href="{{ URL::asset('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap') }}" rel="stylesheet">
-    </head>
-</head>
-<body>
-
-
-
-
->>>>>>> 35064157c8bcdcc9d83cdde08e1cfaf108881c38
     <div class="wrapper">
         <nav id="sidebar" class="sidebar js-sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand" href="#">
           <span class="align-middle">3MART</span>
         </a>
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 35064157c8bcdcc9d83cdde08e1cfaf108881c38
                 <ul class="sidebar-nav">
                     <li class="sidebar-item @yield('Dashboard_active')">
                         <a class="sidebar-link" href="/">
               <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
             </a>
                     </li>
-<<<<<<< HEAD
     
                     <li class="sidebar-item @yield('Profile_active')">
                         <a class="sidebar-link" href="pages-profile.html">
@@ -82,45 +57,16 @@
             </a>
                     </li>
     
-=======
-
-                    <li class="sidebar-item @yield('user_active')">
-                        <a class="sidebar-link" href="{{route('user.index')}}">
-               <span class="align-middle">User</span>
-            </a>
-                    </li>
-
-                    <li class="sidebar-item @yield('categories_active')">
-                        <a class="sidebar-link" href="{{route('categories.index')}}">
-               <span class="align-middle">category</span>
-            </a>
-                    </li>
-
-                    <li class="sidebar-item @yield('service_active') ">
-                        <a class="sidebar-link" href="pages-sign-up.html">
-               <span class="align-middle">service</span>
-            </a>
-                    </li>
-
->>>>>>> 35064157c8bcdcc9d83cdde08e1cfaf108881c38
                     <li class="sidebar-item @yield('service_active') ">
                         <a class="sidebar-link" href="pages-blank.html">
                <span class="align-middle">reservation</span>
             </a>
                     </li>
-<<<<<<< HEAD
     
                     
                 </ul>
     
                 
-=======
-
-
-                </ul>
-
-
->>>>>>> 35064157c8bcdcc9d83cdde08e1cfaf108881c38
             </div>
         </nav>
         <div class="main">
@@ -128,7 +74,6 @@
                 <a class="sidebar-toggle js-sidebar-toggle">
           <i class="hamburger align-self-center"></i>
         </a>
-<<<<<<< HEAD
     
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
@@ -139,44 +84,20 @@
                             
                            
                                 
-=======
-
-                <div class="navbar-collapse collapse">
-                    <ul class="navbar-nav navbar-align">
-                        <li class="nav-item dropdown">
-
-                        </li>
-                        <li class="nav-item dropdown">
-
-
-
->>>>>>> 35064157c8bcdcc9d83cdde08e1cfaf108881c38
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
                 <i class="align-middle" data-feather="settings"></i>
               </a>
-<<<<<<< HEAD
     
                             <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="assets/img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+                <img src="../../../assets/img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
               </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
                                 
                                 
                                 
-=======
-
-                            <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="{{ URL::asset('assets/img/avatars/avatar.jpg') }}" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
-              </a>
-                            <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-
-
-
->>>>>>> 35064157c8bcdcc9d83cdde08e1cfaf108881c38
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Log out</a>
                             </div>
@@ -185,17 +106,39 @@
                 </div>
             </nav>
 
+{{-- //////////////////////////////////////////////////////////////// --}}
+          <form action="{{route('Service.store')}}" method="post" enctype="multipart/form-data">
+            @csrf
+            <div class="card m-3 col-4">
+              <div class="card-body">
+                <input type="text" class="form-control" placeholder="Name" name="Service_Name">
+              </div>
+              <div class="card-body">
+              <select name="Category_id" id=""  class="form-control">
+                @foreach ($categories as $item)
+                <option value="{{$item->id}}">{{$item->Category_Name}}</option>    
+                @endforeach
+              </select>
+            </div>
+              <div class="card-body">
+                <textarea class="form-control"  placeholder="Desc" name="Service_Description"></textarea>
+              </div>
+              <div class="card-body">
+                <input type="file" class="form-control" placeholder="Input" name="Service_Image">
+              </div>
+              <div class="card-body">
+                <input type="number" class="form-control" placeholder="Input" name="Service_Price">
+              </div>
+              <div class="card-body">
+                <input type="number" class="form-control" placeholder="Input" name="Service_Duration">
+              </div>
+              <button type="submit">save</button>
+            </div>
+          </div>
+        </form>
+{{-- //////////////////////////////////////////////////////////////// --}}
 
-<<<<<<< HEAD
-@yield('contenar')
-=======
-
-
-
-            @yield('button')
-
-            @yield('container')
->>>>>>> 35064157c8bcdcc9d83cdde08e1cfaf108881c38
+          
 
 
 
@@ -214,13 +157,8 @@
 
 
 
-<<<<<<< HEAD
-            <script src="assets/js/app.js"></script>
+            <script src="../../../assets/js/app.js"></script>
     
-=======
-            <script src="{{ URL::asset('assets/js/app.js') }}"></script>
-
->>>>>>> 35064157c8bcdcc9d83cdde08e1cfaf108881c38
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
                     var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
@@ -443,8 +381,4 @@
                 });
             </script>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 35064157c8bcdcc9d83cdde08e1cfaf108881c38
