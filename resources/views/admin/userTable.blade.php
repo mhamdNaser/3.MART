@@ -84,8 +84,19 @@ active
                                             class="text-secondary text-xs font-weight-bold">{{$user->password}}</span>
                                     </td>
                                     <td class="align-middle">
-                                        <a href="{{route('user.update', $user->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
-                                        <a href=""><i class="fa-solid fa-trash-can"></i></a>
+                                        <form action="{{route('user.destroy', $user->id)}}" method="POST" >
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <button type="submit">Delete</button>
+
+                                            {{-- <a href=""><i class="fa-solid fa-trash-can"></i></a> --}}
+                                        </form>
+                                        <a href="{{route('user.edit', $user->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
+
+
+
+
                                         {{-- <a href="javascript:;"
                                             class="text-secondary font-weight-bold text-xs"
                                             data-toggle="tooltip" data-original-title="Edit user">
