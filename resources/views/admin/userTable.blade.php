@@ -84,7 +84,7 @@ active
                                             class="text-secondary text-xs font-weight-bold">{{$user->password}}</span>
                                     </td>
                                     <td class="align-middle">
-                                        <a href="{{route('user.update', $user->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <a href="{{route('user.edit', $user->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
                                         <a href=""><i class="fa-solid fa-trash-can"></i></a>
                                         {{-- <a href="javascript:;"
                                             class="text-secondary font-weight-bold text-xs"

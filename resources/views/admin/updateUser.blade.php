@@ -174,17 +174,17 @@ active
                 <br><br>
                     <h1>Update User</h1>
                     <br><br>
-                    <form class="form-group mx-sm-3 mb-2" action="{{route('user.update',$user->id))}}" method="POST" enctype="multipart/form-data">
+                    <form class="form-group mx-sm-3 mb-2" action="{{route('user.update',$user->id)}}" method="POST" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
 
                         <div class="form-group col-md-4 mb-3">
-                          <label">User Name</label>
+                          <label>User Name</label>
                           <input type="text" class="form-control" name="name" value="{{$user->name}}" >
                         </div>
                         <div class="form-group col-md-4 mb-3">
                           <label >Email</label>
-                          <input type="email" class="form-control" name="email" value="{{$user->email}}" >
+                          <input type="email" class="form-control" name="email" value="{{$user->email}}">
                         </div>
                         <div class="form-group col-md-4 mb-3">
                           <label >Phone Number</label>

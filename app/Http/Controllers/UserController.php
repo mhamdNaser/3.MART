@@ -80,7 +80,7 @@ class UserController extends Controller
     {
         //
         $user = User::findOrFail($id);
-        return view('admin.userTable',compact('user'));
+        return view('admin.updateUser',compact('user'));
     }
 
     /**
