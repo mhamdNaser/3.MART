@@ -51,7 +51,7 @@ public function index()
         $category->Category_Image = $category_img;
 
         $category->save();
-        return response('category add done');
+        return to_route('categories.index');
 
 
 
