@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,8 +19,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('profile', function () {
-    return view('admin/profile');
-});
-
 Route::resource('categories', CategoryController::class);
+
+Route::resource('user', UserController::class);
