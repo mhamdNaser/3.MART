@@ -132,7 +132,7 @@ active
                 @csrf
 
                 <div class="form-group col-md-4 mb-3">
-                  <label">User Name</label>
+                  <label>User Name</label>
                   <input type="text" class="form-control" name="name"  placeholder="Enter User Name">
                 </div>
                 <div class="form-group col-md-4 mb-3">

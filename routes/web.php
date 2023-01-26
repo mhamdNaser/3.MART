@@ -15,10 +15,40 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('register', function () {
+    return view('register');
+});
+
+Route::get('login', function () {
+    return view('login');
+});
+
+Route::get('about', function () {
+    return view('about');
+});
+
+Route::get('contact', function () {
+    return view('contact');
+});
+
+Route::get('service', function () {
+    return view('service');
+});
+
+Route::get('dashboard', function () {
     return view('index');
+});
+
+Route::get('profile', function () {
+    return view('admin/profile');
 });
 Route::resource('categories', CategoryController::class);
 
 Route::resource('user', UserController::class);
+
+
 

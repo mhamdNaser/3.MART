@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
         <title>@yield('title')</title>
-        
+
         <link href="{{ URL::asset('assets/css/app.css') }}" rel="stylesheet">
         <link href="{{ URL::asset('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap') }}" rel="stylesheet">
     </head>
@@ -94,7 +94,7 @@
                 <img src="{{ URL::asset('assets/img/avatars/avatar.jpg') }}" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
               </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+                                <a class="dropdown-item" href="/profile"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
 
 
 

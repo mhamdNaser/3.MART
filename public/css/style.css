@@ -79,7 +79,7 @@ a:focus {
 /*header section*/
 .hero_area {
   position: relative;
-  background-color: #d1e3ff;
+  background-color: #87A2FB;
 }
 
 .header_section .container-fluid {
@@ -89,7 +89,7 @@ a:focus {
 
 .header_section .header_top {
   padding: 15px 0;
-  background-color: #000000;
+  background-color: #6F38C5;
 }
 
 .header_section .header_top .contact_nav {
