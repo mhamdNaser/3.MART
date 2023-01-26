@@ -18,12 +18,5 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('index');
 });
-<<<<<<< HEAD
 Route::resource('categories', CategoryController::class);
 
-=======
-
-Route::resource('categories', CategoryController::class);
-
-Route::resource('user', UserController::class);
->>>>>>> 496dd3e569adfa78fae916921e5925e3bf11dda5
