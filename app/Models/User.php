@@ -8,9 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Reservation;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
+    use SoftDeletes;
     use HasApiTokens, HasFactory, Notifiable;
 
     public function Reservation2 (){
@@ -24,11 +26,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'User_Image',
-        'Phone',
         'email',
-        'email_verified_at',
+        'Phone',
         'password',
+        'User_Image',
         'Role',
     ];
 
