@@ -116,12 +116,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user,$id)
+    public function destroy($id)
     {
         //
         $user = User::find($id);
         $user->delete();
-        session()->flash('success','User deleted successfully');
+        return back()->with('success','User deleted successfully');
         return redirect(route('user.index'));
 
 
