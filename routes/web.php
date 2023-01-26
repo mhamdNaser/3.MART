@@ -18,7 +18,7 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('index');
 });
-
 Route::resource('categories', CategoryController::class);
 
-Route::resource('user/{id}', UserController::class);
+Route::resource('user', UserController::class);
+
