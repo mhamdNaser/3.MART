@@ -15,10 +15,9 @@
         <link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
         <title>@yield('title')</title>
-
-        <link href="assets/css/app.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/6487c144b2.js" crossorigin="anonymous"></script>
+        
+        <link href="{{ URL::asset('assets/css/app.css') }}" rel="stylesheet">
+        <link href="{{ URL::asset('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap') }}" rel="stylesheet">
     </head>
 </head>
 <body>
@@ -92,7 +91,7 @@
               </a>
 
                             <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="assets/img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+                <img src="{{ URL::asset('assets/img/avatars/avatar.jpg') }}" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
               </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
@@ -132,7 +131,7 @@
 
 
 
-            <script src="assets/js/app.js"></script>
+            <script src="{{ URL::asset('assets/js/app.js') }}"></script>
 
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
