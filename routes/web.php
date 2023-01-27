@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ReservationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,3 +18,5 @@ Route::get('/', function () {
     return view('index');
 });
 Route::resource('categories', CategoryController::class);
+Route::get('Reservation/cancel', 'ReservationController@cancel');
+Route::resource('Reservation', ReservationController::class);
