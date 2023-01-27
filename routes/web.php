@@ -24,9 +24,16 @@ use App\Http\Controllers\RegisterController;
 // });
 // Route::resource('services', ServiceController::class);
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', function () { return view('home'); });
+Route::get('index', function () { return view('index'); });
+Route::get('about', function () { return view('about'); });
+Route::get('contact', function () { return view('contact'); });
+Route::get('service', function () { return view('service'); });
+Route::get('profile', function () { return view('profile'); });
+Route::get('cart', function () { return view('cart'); });
+
+
+
 Route::resource('categories', CategoryController::class);
 Route::get('Reservation/cancel', 'ReservationController@cancel');
 Route::resource('Reservation', ReservationController::class);
@@ -37,24 +44,9 @@ Route::controller(RegisterController::class)->group(function(){
     Route::post('register', 'store')->name('register');
     Route::get('login', 'index')->name('login');
     Route::post('login', 'login')->name('go.login');
-    Route::post('logout', 'destroy')->name('logout');
+    Route::get('logout', 'destroy')->name('logout');
 });
 
-Route::get('about', function () {
-    return view('about');
-});
-
-Route::get('contact', function () {
-    return view('contact');
-});
-
-Route::get('service', function () {
-    return view('service');
-});
-
-// Route::get('dashboard', function () {
-//     return view('index');
-// });
 
 Route::resource('Service', ServiceController::class);
 // Route::resource('Service.edit/{id}',ServiceController::class);

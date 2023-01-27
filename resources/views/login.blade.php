@@ -12,11 +12,11 @@
 
             <div class="form-group col-md-4 mb-3">
               <label >Email</label>
-              <input type="email" class="form-control" name="email" placeholder="Enter User E-mail">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter User E-mail">
             </div>
             <div class="form-group col-md-4 mb-3">
               <label >Password</label>
-              <input type="password" class="form-control" name="password" placeholder="Enter User Password">
+              <input type="password" class="form-control" id="password" name="password" placeholder="Enter User Password">
             </div>
             <button type="submit" class="btn btn-dark">Add</button>
           </form>
