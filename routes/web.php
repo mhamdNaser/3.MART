@@ -3,6 +3,17 @@
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ReservationController;
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegisterController;
 
@@ -16,6 +27,9 @@ use App\Http\Controllers\RegisterController;
 Route::get('/', function () {
     return view('home');
 });
+Route::resource('categories', CategoryController::class);
+Route::get('Reservation/cancel', 'ReservationController@cancel');
+Route::resource('Reservation', ReservationController::class);
 
 
 Route::controller(RegisterController::class)->group(function(){
