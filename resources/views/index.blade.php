@@ -7,7 +7,10 @@
 active
 @endsection
 
-@section('contenar')
-    
+@section('container')
+<<<<<<< HEAD
+
+=======
+>>>>>>> dd2235d109d861cf1bc32957480f2a1dc7c9d6bc
 
 @endsection
