@@ -31,12 +31,12 @@ active
             <thead>
                 <tr>
                     {{-- <th>S.No</th> --}}
-                    <th>service_name</th>
-                    <th>categoryid</th>
-                    <th>Service_Description</th>
-                    <th>Service_Image</th> 
-                    <th>Service_Price</th> 
-                    <th>Service_Duration</th> 
+                    <th>service name</th>
+                    {{-- <th>category id</  th> --}}
+                    <th>Service Description</th>
+                    <th>Service Image</th> 
+                    <th>Service Price</th> 
+                    <th>Service Duration</th> 
                     <th width="280px">Action</th>
                 </tr>
             </thead>
@@ -45,7 +45,7 @@ active
                     <tr>
                       {{-- <td>{{ $service->id }}</td> --}}
                       <td>{{ $service->Service_Name }}</td>
-                      <td>{{ $service->Category_id }}</td>
+                      {{-- <td>{{ $service->Category_id }}</td> --}}
                       <td>{{ $service->Service_Description }}</td>
                         <td><img src="{{URL::asset("storage/serviceimage/$service->Service_Image")}}" alt="" srcset="" style="width:100px;"></td>
                         <td>{{ $service->Service_Price }}</td>
