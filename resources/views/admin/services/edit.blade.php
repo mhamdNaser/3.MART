@@ -1,17 +1,12 @@
-
 @extends('layout.navbar')
 @section('title')
 Services
 @endsection
-
 @section('service_active')
 active
 @endsection
-
 @section('container')
 
-<body>
-   
     <div class="container mt-2">
         <div class="row">
             <div class="col-lg-12 margin-tb">
@@ -24,7 +19,6 @@ active
                 </div>
             </div>
         </div>
-        
         <form action="{{route('Service.update',$service->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             @method("PUT")
@@ -33,14 +27,10 @@ active
                 <input type="text" class="form-control" placeholder="Name" name="Service_Name"value="{{$service->Service_Name}}">
               </div>
               <div class="card-body">
-              <select name="Category_id" id=""  class="form-control"value="{{$service->Category_id}}">
-                            
-@foreach($Category as $value)
-<option value="{{$value->id}}">{{$value->Category_Name}}</option>
-@endforeach
-
-              
-                
+              <select name="Category_id" id=""  class="form-control"value="{{$service->Category_id}}">            
+                @foreach($Category as $value)
+                <option value="{{$value->id}}">{{$value->Category_Name}}</option>
+                @endforeach
               </select>
             </div>
               <div class="card-body">
@@ -59,6 +49,4 @@ active
             </div>
           </div>
         </form>
-
-</html> 
 @endsection

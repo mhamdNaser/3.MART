@@ -2,11 +2,9 @@
 @section('title')
 Reservations
 @endsection
-
 @section('Reservation_active')
 active
 @endsection
-
 @section('container')
     <main class="m-2 p-8 w-full">
         <div>
@@ -64,8 +62,6 @@ active
                 </td>
             </tr>
             @endforeach
-
         </tbody>
     </table>
-
 @endsection

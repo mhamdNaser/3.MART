@@ -1,14 +1,9 @@
 @extends('layout.master')
-
 @section('title', 'home')
 
-@section('home_active')
-active
-@endsection
+@section('home_active', 'active')
 
 @section('content')
-
-<!-- slider section -->
 <section class="slider_section ">
     <div class="container ">
       <div class="row">
@@ -34,10 +29,7 @@ active
       </div>
     </div>
   </section>
-  <!-- end slider section -->
 </div>
-
-<!-- feature section -->
 <section class="feature_section">
   <div class="container">
     <div class="feature_container">
@@ -84,12 +76,6 @@ active
     </div>
   </div>
 </section>
-
-<!-- end feature section -->
-
-
-<!-- professional section -->
-
 <section class="professional_section layout_padding">
   <div class="container">
     <div class="row">
@@ -183,11 +169,6 @@ active
     </div>
   </div>
 </section>
-
-<!-- end service section -->
-
-<!-- client section -->
-
 <section class="client_section ">
   <div class="container">
     <div class="heading_container heading_center">
@@ -309,16 +290,5 @@ active
     </div>
   </div>
 </section>
-
-<!-- end client section -->
-
-
-
-<!-- contact section -->
-
-
-  <!-- end contact section -->
-
-
 @endsection
 

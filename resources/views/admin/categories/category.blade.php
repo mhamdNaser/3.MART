@@ -4,18 +4,11 @@
 @section('categories_active')
 active
 @endsection
-
-
-
-
-
 @section('container')
 <link rel="stylesheet" href="{{ URL::asset('assets/css/category.css') }}">
 <div class="row m-2">
-
-  <div class="card m-3 col-11">
+  <div class="card m-3 col">
     <div class="card-body">
-
       <form action="{{route('categories.index')}}" method="post" enctype="multipart/form-data" >
         @csrf
         <label for="Category_Name">Name</label></br>
@@ -29,38 +22,32 @@ active
   </div>
 </div>
 </div>
-
-
-
-
+<table class="table  table-bordered">
+  <thead>
+      <tr>
+          <th>Category_Image</th>
+          <th>Category_Name</th>
+          <th>Category_Description</th> 
+          <th width="280px">Action</th>
+      </tr>
+  </thead>
+  <tbody>
 @foreach ($categories as $category)
-
-<div class="card-grid m-3 col-4">
-  <div class="card card-shadow">
-    <div class="card-header card-image">
-      <img src="{{URL::asset("storage/categoryImg/$category->Category_Image")}}" />
-    </div>
-    <div class="card-body1">
-      <h5 class="card-title"> {{$category->Category_Name}}</h5>
-      <p class="card-text">{{$category->Category_Description}}</p>
-    </div>
-    <div class="card-footer">
-      <form action="{{ route('categories.destroy', $category->id) }}" method="post">
-        @csrf
-        @method('delete')
-        <button type="submit" class="btn btn-danger">Delete</button>
-        <a href="{{route('categories.edit',$category->id)}}" class="btn btn-warning">edit </a>
-      </form>
-    </div>
-  </div>
-  </div>
-
-
-
-
+          <tr>
+                <td ><img style="width: 100px;" src="{{URL::asset("storage/categoryImg/$category->Category_Image")}}" ></td>
+                <td>{{$category->Category_Name}}</td>
+                <td>{{$category->Category_Description}}</td>
+                <td>
+                <form action="{{ route('categories.destroy', $category->id) }}" method="post">
+                  @csrf
+                  @method('delete')
+                  <button type="submit" class="btn btn-danger">Delete</button>
+                  <a href="{{route('categories.edit',$category->id)}}" class="btn btn-warning">edit </a>
+                </form> 
+              </td>
+          </tr>
 @endforeach
-
-
-
+</tbody>
+</table>
 @endsection
 
