@@ -26,7 +26,6 @@ active
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    
                     <th>service_name</th>
                     <th>categoryid</th>
                     <th>Service_Description</th>
@@ -40,7 +39,7 @@ active
                 @foreach ($services as $service)
                     <tr>
                       <td>{{ $service->Service_Name }}</td>
-                      <td>{{ $service->Category_id }}</td>
+                      {{-- <td>{{ $service->Category_id }}</td> --}}
                       <td>{{ $service->Service_Description }}</td>
                         <td><img src="{{URL::asset("storage/serviceimage/$service->Service_Image")}}" alt="" srcset="" style="width:100px;"></td>
                         <td>{{ $service->Service_Price }}</td>
