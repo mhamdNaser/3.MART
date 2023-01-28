@@ -4,6 +4,7 @@
 
 @section('title', 'Contact')
 @section('content')
+
   <section class="contact_section layout_padding">
     <div class="container">
       <div class="heading_container">
@@ -33,7 +34,7 @@
             </div>
           </form>
         </div>
-       
+
         </div>
       </div>
     </div>
