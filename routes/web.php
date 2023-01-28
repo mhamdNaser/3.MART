@@ -29,7 +29,7 @@ Route::get('/', function () {
     return view('home');
 });
 Route::resource('categories', CategoryController::class);
-Route::get('Reservation/cancel', 'ReservationController@cancel');
+// Route::get('Reservation/cancel', 'ReservationController@cancel');
 Route::resource('Reservation', ReservationController::class);
 
 
@@ -45,9 +45,9 @@ Route::get('about', function () {
     return view('about');
 });
 
-Route::get('contact', function () {
-    return view('contact');
-});
+// Route::get('contact', function () {
+//     return view('contact');
+// });
 
 Route::get('service', function () {
     $services = Service::all();
@@ -65,6 +65,8 @@ Route::resource('categories', CategoryController::class);
 
 Route::resource('user', UserController::class);
 
-Route::get('servicebook', function () {
-    return view('makereservation');
-});
+// Route::get('servicebook', function () {
+//     return view('makereservation');
+// });
+
+

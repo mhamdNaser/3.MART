@@ -34,7 +34,8 @@
               </p>
             </div>
             <div class="btn-box">
-              <a href="{{route("Reservation.create",$item->id)}}">
+              {{-- create ---------edit --}}
+              <a href="{{route('Reservation.show',$item->id)}}">
                 Book Now
               </a>
             </div>

@@ -52,6 +52,7 @@ class ReservationController extends Controller
     {
         //
         // return view('admin.reservation.addreservation');
+        // dd($id);
         return view('makereservation');
     }
 
@@ -63,21 +64,22 @@ class ReservationController extends Controller
      */
     public function store(ReservationStoreRequest $request)
     {
+        dd($request->serviceid);
         $request_date = Carbon::parse($request->Start_Time);
         $reservations = Reservation::get();
         foreach ($reservations as $res) {
             $restime = Carbon::parse($res->Start_Time);
             if ($restime->format('Y-m-d') == $request_date->format('Y-m-d')) {
-                return redirect(route('Reservation.index'));
+                return back()->with('warning','this time is reserved pick another time') ;
             }}
-            $service = Service::findorfail($request->Service_Id);
+            $service = Service::findorfail($request->serviceid);
             $new_res=$request->validated();
             $new_res["End_Time"]= $request_date->addHours($service->Service_Duration);
             $new_res["Total_Price"]= ($service->Service_Price);
-            // dd($new_res["Total_Price"]);
+            dd($new_res["Total_Price"]);
         Reservation::create($new_res);
         // dd($request->validated());
-        return to_route('Reservation.index');
+        return back()->with('warning','this time is reserved pick another time');
     }
 
     /**
@@ -86,9 +88,10 @@ class ReservationController extends Controller
      * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function show(Reservation $reservation)
+    public function show($id)
     {
         //
+        return view('makereservation',["serviceid" =>$id]);
     }
 
     /**
@@ -97,9 +100,11 @@ class ReservationController extends Controller
      * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
+    
     public function edit(Reservation $reservation,$id)
     {
         //
+        return view('makereservation');
         $res = Reservation::findorFail($id);
         $res->Status = "Confirmed";
         $res->save();
@@ -138,7 +143,5 @@ class ReservationController extends Controller
     //     $res->save();
     //     return  to_route('Reservation.index')->with('success','Reservation has confirmed') ;
     // }
-
-    
 
 }

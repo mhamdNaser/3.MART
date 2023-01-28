@@ -24,8 +24,8 @@ class ReservationStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'Service_Id'=>['required'],
-            'User_Id'=>['required'],
+            // 'Service_Id'=>['required'],
+            // 'User_Id'=>['required'],
             'City'=>['required'],
             'Street_Name'=>['required'],
             'Building_Number'=>['required'],

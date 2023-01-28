@@ -1,50 +1,53 @@
+<head>
+  
+</head>
 @extends('layout.master')
 
-@section('title', 'Contact')
+@section('title')
+  submit your booking
+@endsection
 
 @section('content')
-  <!-- contact section -->
-
-  <section class="contact_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Contact Us
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <form action="">
-            <div>
-              <input type="text" placeholder="Name" />
-            </div>
-            <div>
-              <input type="text" placeholder="Phone Number" />
-            </div>
-            <div>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div>
-              <input type="text" class="message-box" placeholder="Message" />
-            </div>
-            <div class="d-flex ">
-              <button>
-                SEND
-              </button>
-            </div>
-          </form>
-        </div>
-        <div class="col-md-6">
-          <div class="map_container">
-            <div class="map">
-              <div id="googleMap" style="width:100%;height:100%;"></div>
-            </div>
+{{-- user masseges --}}
+<main class="m-2 p-8 w-full">
+  <div>
+      @if (session()->has('danger'))
+          <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800"
+              role="alert">
+              <span class="font-medium">{{ session()->get('danger') }}!</span>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+      @endif
+      @if (session()->has('success'))
+          <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800"
+              role="alert">
+              <span class="font-medium">{{ session()->get('success') }}!</span>
+          </div>
+      @endif
+      @if (session()->has('warning'))
+          <div class="p-4 mb-4 text-sm text-yellow-700 bg-yellow-100 rounded-lg dark:bg-yellow-200 dark:text-yellow-800"
+              role="alert">
+              <span class="font-medium">{{ session()->get('warning') }}!</span>
+          </div>
+      @endif
+  </div>
+</main>
+  <!-- contact section -->
+  <h1>Fill your information to complete your booking</h1>
+  <form action="{{route("Reservation.store")}}" method="post" enctype="multipart/form-data" >
+    <h1>{{$serviceid}}</h1>
+      @csrf
+      <input type="hidden" name="serviceid" id="Category_Name" class="form-control" value={{$serviceid}}><br>
+      <label >City</label><br>
+      <input type="text" name="City" id="Category_Name" class="form-control"><br>
+      <label >Street_Name</label><br>
+      <input type="text" name="Street_Name" id="Category_Name" class="form-control"><br>
+      <label >Building_Number</label><br>
+      <input type="text" name="Building_Number" id="Category_Name" class="form-control"><br>
+      {{-- time start --}}
+      <label >Start_Time</label><br>
+      <input type="datetime-local" name="Start_Time" id="Category_Name" class="form-control"><br>
+      <input type="submit" value="submit" class="btn btn-success"><br>
+  </form>
   <!-- end contact section -->
 
   @endsection
