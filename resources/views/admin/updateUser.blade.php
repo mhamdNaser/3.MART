@@ -14,7 +14,7 @@ active
     <br><br>
         <h1>Update User</h1>
         <br><br>
-        <form class="form-group mx-sm-3 mb-2" action="{{url('user.update',$user->id)}}" method="POST" enctype="multipart/form-data">
+        <form class="form-group mx-sm-3 mb-2" action="{{route('user.update',$user->id)}}" method="POST" enctype="multipart/form-data">
             @method('PUT')
             @csrf
 
@@ -32,7 +32,7 @@ active
             </div>
             <div class="form-group col-md-4 mb-3">
               <label >Password</label>
-              <input type="password" class="form-control" name="password" value="{{$user->password}}" >
+              <input type="password" class="form-control" name="password" value="" >
             </div>
             <div class="form-group col-md-4 mb-3">
                 <label >User Image</label><br>

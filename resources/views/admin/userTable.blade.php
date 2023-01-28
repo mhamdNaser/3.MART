@@ -32,22 +32,25 @@ active
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th
+                                    <th  scope="row"
                                         class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Details</th>
-                                    <th
+                                        Details
+                                    </th>
+                                    <th  scope="row"
                                         class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Role</th>
-                                    <th
+                                        Role
+                                    </th>
+                                    <th  scope="row"
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Phone Number</th>
-                                    <th
+                                        Phone Number
+                                    </th>
+                                    {{-- <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Password</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Action</th>
-                                    <th class="text-secondary opacity-7"></th>
+                                        Action</th> --}}
+                                    <th class="text-secondary opacity-7 col-lg-2 text-center"  scope="row">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -79,21 +82,26 @@ active
                                         <span
                                             class="text-secondary text-xs font-weight-bold">{{$user->Phone}}</span>
                                     </td>
-                                    <td class="align-middle text-center">
+                                    {{-- <td class="align-middle text-center">
                                         <span
                                             class="text-secondary text-xs font-weight-bold">{{$user->password}}</span>
-                                    </td>
-                                    <td class="align-middle">
-                                        <form action="{{route('user.destroy', $user->id)}}" method="POST" >
-                                            @csrf
-                                            @method('DELETE')
+                                    </td> --}}
+                                    <td class="align-middle row">
+                                        <div class="col-sm-4 me-5">
+                                            <form action="{{route('user.destroy', $user->id)}}" method="POST" >
+                                                @csrf
+                                                @method('DELETE')
 
-                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                                <button type="submit" class="btn btn-danger">Delete</button>
 
-                                            {{-- <a href=""><i class="fa-solid fa-trash-can"></i></a> --}}
+                                                {{-- <a href=""><i class="fa-solid fa-trash-can"></i></a> --}}
 
-                                        </form>
-                                        <a href="{{route('user.edit', $user->id)}}"><button type="submit" class="btn btn-warning">Edit</button></a>
+                                            </form>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <a href="{{route('user.edit', $user->id)}}"><button type="submit" class="btn btn-warning">Edit</button></a>
+                                        </div>
+
 
 
 

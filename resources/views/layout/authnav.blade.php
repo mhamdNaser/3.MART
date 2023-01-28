@@ -20,7 +20,9 @@
                     @if (Auth::user()->Role === 'ADM' || Auth::user()->Role === 'SVP')
                         <li class="nav-item dropdown-center">
                             <a class="nav-link fs-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa fa-user-circle-o "></i>
+                                @auth
+                                    <img src="{{ asset('storage/userimage/'.Auth::user()->User_Image) }}" class="rounded-circle" height="30px" width="30px" alt="Auth Image">
+                                @endauth
                             </a>
                             <ul class="dropdown-menu text-center">
                                 <li><a class="dropdown-item" href="/profile">Profile</a></li>
@@ -32,7 +34,9 @@
                     @else
                         <li class="nav-item dropdown-center">
                             <a class="nav-link fs-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa fa-user-circle-o"></i>
+                                @auth
+                                    <img src="{{ asset('storage/userimage/'.Auth::user()->User_Image) }}" class="rounded-circle" height="30px" width="30px" alt="Auth Image">
+                                @endauth
                             </a>
                             <ul class="dropdown-menu text-center">
                                 <li><a class="dropdown-item" href="profile">Profile</a></li>
