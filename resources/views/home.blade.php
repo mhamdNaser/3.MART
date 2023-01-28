@@ -17,8 +17,7 @@
               Services
             </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui harum voluptatem adipisci. Quos molestiae saepe dicta nobis pariatur, tempora iusto, ad possimus soluta hic praesentium mollitia consequatur beatae, aspernatur culpa.
-            </p>
+              refer to the various services that are provided to repair, maintain and improve the condition of various equipment, systems and structures. These services can be performed on a wide range of items including but not limited to, home appliances, automotive systems, HVAC systems, plumbing systems and electrical systems. </p>
             <a href="">
               Contact Us
             </a>
@@ -85,35 +84,6 @@
 
 <!-- end feature section -->
 
-<!-- about section -->
-
-<section class="about_section layout_padding-bottom">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-5 col-md-6">
-        <div class="detail-box">
-          <h2>
-            About us
-          </h2>
-          <p>
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomisedThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised
-          </p>
-          <a href="">
-            Read More
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-7 col-md-6">
-        <div class="img-box">
-          <img src="images/about-img.jpg" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- end about section -->
-
 
 <!-- professional section -->
 
@@ -132,11 +102,12 @@
             Home Services.
           </h2>
           <p>
-            randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All randomised words which don't look even slightly
+            "We Provide Professional Home Services" is a statement that can be used by a business or individual that offers a variety of professional services for homes. These services can include, but not limited to:
+             Cleaning services: This includes regular cleaning of homes, deep cleaning, and specialized cleaning services such as carpet cleaning and window cleaning.
+             Home repairs: This includes repairs to various parts of the home such as plumbing, electrical, carpentry, and painting.
+             Home maintenance: This includes regular maintenance of various parts of the home such as HVAC systems, appliances, and outdoor spaces.
           </p>
-          <a href="">
-            Read More
-          </a>
+          
         </div>
       </div>
     </div>
@@ -342,45 +313,6 @@
 
 <!-- contact section -->
 
-<section class="contact_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Contact Us
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <form action="">
-            <div>
-              <input type="text" placeholder="Name" />
-            </div>
-            <div>
-              <input type="text" placeholder="Phone Number" />
-            </div>
-            <div>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div>
-              <input type="text" class="message-box" placeholder="Message" />
-            </div>
-            <div class="d-flex ">
-              <button>
-                SEND
-              </button>
-            </div>
-          </form>
-        </div>
-        <div class="col-md-6">
-          <div class="map_container">
-            <div class="map">
-              <div id="googleMap" style="width:100%;height:100%;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- end contact section -->
 
