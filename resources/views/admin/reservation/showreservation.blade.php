@@ -8,7 +8,7 @@ Reservations
 active
 @endsection
 
-@section('contenar')
+@section('container')
 <main class="m-2 p-8 w-full">
     <div>
         @if (session()->has('danger'))

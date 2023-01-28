@@ -10,11 +10,7 @@ active
 
 
 
-<<<<<<< HEAD
-@section('contenar')
-=======
 @section('container')
->>>>>>> 35064157c8bcdcc9d83cdde08e1cfaf108881c38
 
 <div class="row m-3">
 <div class="card m-3 col-4" >

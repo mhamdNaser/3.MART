@@ -52,9 +52,9 @@ Route::get('service', function () {
     return view('service');
 });
 
-// Route::get('dashboard', function () {
-//     return view('index');
-// });
+Route::get('dashboard', function () {
+    return view('index');
+});
 
 Route::resource('Service', ServiceController::class);
 // Route::resource('Service.edit/{id}',ServiceController::class);
@@ -62,6 +62,5 @@ Route::resource('Service', ServiceController::class);
 Route::resource('categories', CategoryController::class);
 
 Route::resource('user', UserController::class);
-
 
 
