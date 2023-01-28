@@ -2,6 +2,9 @@
 
 @section('title', 'home')
 
+@section('home_active')
+active
+@endsection
 
 @section('content')
 
@@ -107,7 +110,7 @@
              Home repairs: This includes repairs to various parts of the home such as plumbing, electrical, carpentry, and painting.
              Home maintenance: This includes regular maintenance of various parts of the home such as HVAC systems, appliances, and outdoor spaces.
           </p>
-          
+
         </div>
       </div>
     </div>
@@ -115,7 +118,7 @@
 </section>
 
 <!-- end professional section -->
-
+</div>
 <!-- service section -->
 
 <section class="service_section layout_padding">

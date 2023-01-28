@@ -2,6 +2,8 @@
 
 @section('title', 'About')
 
+@section('About_active', 'active')
+
 @section('content')
 
   <!-- about section -->

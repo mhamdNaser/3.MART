@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('ContactUs_active', 'active')
+
 @section('title', 'Contact')
 
 @section('content')

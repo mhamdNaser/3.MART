@@ -2,6 +2,8 @@
 
 @section('title', 'Contact')
 
+@section('Services_active', 'active')
+
 @section('content')
 
   <!-- service section -->
