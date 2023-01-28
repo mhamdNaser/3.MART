@@ -11,8 +11,12 @@
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="shortcut icon" href="assets/img/icons/icon-48x48.png" />
+        <!-- bootstrap core css -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
         <link rel="canonical" href="https://demo-basic.adminkit.io/" />
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 
         <title>@yield('title')</title>
 
@@ -28,74 +32,84 @@
 <div class="wrapper">
     <nav id="sidebar" class="sidebar js-sidebar">
         <div class="sidebar-content js-simplebar">
-            <a class="sidebar-brand" href="#">
-            <span class="align-middle">3MART</span>
-        </a>
-        <ul class="sidebar-nav">
-            <li class="sidebar-item @yield('Dashboard_active')">
-                <a class="sidebar-link" href="/">
-                <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+            <div class="container-fluid text-center p-3">
+                <a class="sidebar-brand" href="#">
+                    @auth
+                        <img src="{{ asset('storage/userimage/'.Auth::user()->User_Image) }}" class="rounded-circle" height="100rem" width="100rem" alt="Auth Image">
+                    @endauth
                 </a>
-            </li>
-            <li class="sidebar-item @yield('user_active')">
-                <a class="sidebar-link" href="{{route('user.index')}}">
-                    <span class="align-middle">User</span>
-                </a>
-            </li>
-            <li class="sidebar-item @yield('categories_active')">
-                <a class="sidebar-link" href="{{route('categories.index')}}">
-                    <span class="align-middle">category</span>
-                </a>
-            </li>
-            <li class="sidebar-item @yield('service_active') ">
-                <a class="sidebar-link" href="{{route('Service.index')}}">
-                    <span class="align-middle">service</span>
-                </a>
-            </li>
-            <li class="sidebar-item @yield('Reservation_active') ">
-                <a class="sidebar-link" href="{{route('Reservation.index')}}">
-                    <span class="align-middle">reservation</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<div class="main">
-    <nav class="navbar navbar-expand navbar-light navbar-bg">
-        <a class="sidebar-toggle js-sidebar-toggle">
-          <i class="hamburger align-self-center"></i>
-        </a>
-        <div class="navbar-collapse collapse">
-            <ul class="navbar-nav navbar-align">
-                <li class="nav-item dropdown">
-                </li>
-                <li class="nav-item dropdown">
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-                        <i class="align-middle" data-feather="settings"></i>
+                <hr class="text-light">
+                <h4 class="text-light text-center">{{ strtoupper(Auth::user()->name) }}</h4>
+            </div>
+            <ul class="sidebar-nav text-center">
+                <li class="sidebar-item @yield('Dashboard_active')">
+                    <a class="sidebar-link" href="/">
+                        Back To Site View
                     </a>
-                    <a class="nav-link d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                        @auth
-                            <img src="{{ asset('storage/userimage/'.Auth::user()->User_Image) }}" class="rounded-circle" height="40px" width="40px" alt="Auth Image">
-                        @endauth
+                </li>
+                <li class="sidebar-item @yield('user_active')">
+                    <a class="sidebar-link" href="{{route('user.index')}}">
+                        <span class="align-middle">User</span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end">
-                        <a class="dropdown-item" href="/profile"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Log out</a>
-                    </div>
+                </li>
+                <li class="sidebar-item @yield('categories_active')">
+                    <a class="sidebar-link" href="{{route('categories.index')}}">
+                        <span class="align-middle">category</span>
+                    </a>
+                </li>
+                <li class="sidebar-item @yield('service_active') ">
+                    <a class="sidebar-link" href="{{route('Service.index')}}">
+                        <span class="align-middle">service</span>
+                    </a>
+                </li>
+                <li class="sidebar-item @yield('Reservation_active') ">
+                    <a class="sidebar-link" href="{{route('Reservation.index')}}">
+                        <span class="align-middle">reservation</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="mt-5">
+                <div class="sidebar-nav text-center mt-5">
+                    <li class="sidebar-item @yield('service_active') ">
+                        <a class="sidebar-link" href="/profile">Profile</a>
+                    </li>
+                    <li class="sidebar-item @yield('Reservation_active') ">
+                        <a class="sidebar-link" href="logout">Log Out</a>
+                    </li>
+                </div>
+            </div>
+            <hr class="text-light">
+            <ul class="sidebar-nav navbar-dark d-flex justify-content-center">
+                <li class="sidebar-item">
+                    <a class="nav-link ps-3 pe-3 pb-2" href="" ><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="nav-link ps-3 pe-3 pb-2" href="" ><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="nav-link ps-3 pe-3 pb-2" href="" ><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="nav-link ps-3 pe-3 pb-2" href="" ><i class="fa fa-instagram" aria-hidden="true"></i></a>
                 </li>
             </ul>
         </div>
     </nav>
-    <main class="content">
-        <div class="container-fluid p-0">
-            @yield('button')
-            @yield('container')
-        </div>
-    </main>
-</div>
+    <div class="main">
+        @auth
+        <nav class="navbar navbar-expand navbar-light navbar-bg">
+            <a class="sidebar-toggle js-sidebar-toggle">
+            <i class="hamburger align-self-center"></i>
+            </a>
+        </nav>
+        @endauth
+        <main class="content">
+            <div class="container-fluid p-0">
+                @yield('button')
+                @yield('container')
+            </div>
+        </main>
+    </div>
 
 
 

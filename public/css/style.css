@@ -121,7 +121,7 @@ a:focus {
 }
 
 .navbar-brand span {
-  color: #0355cc;
+  color: #3b7ddd;
   text-transform: uppercase;
 }
 
@@ -139,7 +139,8 @@ a:focus {
 }
 
 .custom_nav-container .navbar-nav .nav-item:hover .nav-link, .custom_nav-container .navbar-nav .nav-item.active .nav-link {
-  color: white;
+  color: #3b7ddd;
+  border-bottom: 3px solid #3b7ddd;
 }
 
 .custom_nav-container .form-inline .nav_search-btn {

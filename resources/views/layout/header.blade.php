@@ -28,38 +28,34 @@
   <div class="hero_area bg-light">
     <!-- header section strats -->
     <header class="header_section sticky-top bg-light">
-      <div class="header_top">
-            @include('layout.authnav')
-      </div>
-      <div class="header_bottom nav bg-dark">
-        <div class="container-fluid">
-          <nav class="navbar navbar-dark navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="/">
-              <span>
+        <div class="header_top">
+                @include('layout.authnav')
+        </div>
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg custom_nav-container ps-3 pe-3 pt-2">
+            <a class="navbar-brand  pb-2 ms-2" href="/">
+                <span>
                 3MART
-              </span>
+                </span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
+                <span class=""> </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                <li class="nav-item  @yield('home_active')">
-                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                <ul class="navbar-nav">
+                <li class="nav-item @yield('home_active')">
+                    <a class="nav-link pb-3" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item @yield('About_active')">
-                  <a class="nav-link" href="/about" > About</a>
+                    <a class="nav-link pb-3" href="/about" > About</a>
                 </li>
                 <li class="nav-item @yield('Services_active')">
-                  <a class="nav-link" href="/service">Services</a>
+                    <a class="nav-link pb-3" href="/service">Services</a>
                 </li>
                 <li class="nav-item @yield('ContactUs_active')">
-                  <a class="nav-link" href="/contact">Contact Us</a>
+                    <a class="nav-link pb-3" href="/contact">Contact Us</a>
                 </li>
-              </ul>
+                </ul>
             </div>
-          </nav>
-        </div>
-      </div>
+        </nav>
     </header>
     <!-- end header section -->
