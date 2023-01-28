@@ -4,6 +4,7 @@ use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ReservationController;
+use App\Models\Service;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,7 +50,8 @@ Route::get('contact', function () {
 });
 
 Route::get('service', function () {
-    return view('service');
+    $services = Service::all();
+    return view('service',["collection"=>$services]);
 });
 
 Route::get('dashboard', function () {
@@ -63,4 +65,6 @@ Route::resource('categories', CategoryController::class);
 
 Route::resource('user', UserController::class);
 
-
+Route::get('servicebook', function () {
+    return view('makereservation');
+});
