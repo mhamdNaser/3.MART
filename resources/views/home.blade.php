@@ -1,11 +1,9 @@
 @extends('layout.master')
-
 @section('title', 'home')
 
+@section('home_active', 'active')
 
 @section('content')
-
-<!-- slider section -->
 <section class="slider_section ">
     <div class="container ">
       <div class="row">
@@ -31,10 +29,7 @@
       </div>
     </div>
   </section>
-  <!-- end slider section -->
 </div>
-
-<!-- feature section -->
 <section class="feature_section">
   <div class="container">
     <div class="feature_container">
@@ -81,12 +76,6 @@
     </div>
   </div>
 </section>
-
-<!-- end feature section -->
-
-
-<!-- professional section -->
-
 <section class="professional_section layout_padding">
   <div class="container">
     <div class="row">
@@ -107,7 +96,7 @@
              Home repairs: This includes repairs to various parts of the home such as plumbing, electrical, carpentry, and painting.
              Home maintenance: This includes regular maintenance of various parts of the home such as HVAC systems, appliances, and outdoor spaces.
           </p>
-          
+
         </div>
       </div>
     </div>
@@ -115,7 +104,7 @@
 </section>
 
 <!-- end professional section -->
-
+</div>
 <!-- service section -->
 
 <section class="service_section layout_padding">
@@ -180,11 +169,6 @@
     </div>
   </div>
 </section>
-
-<!-- end service section -->
-
-<!-- client section -->
-
 <section class="client_section ">
   <div class="container">
     <div class="heading_container heading_center">
@@ -306,16 +290,5 @@
     </div>
   </div>
 </section>
-
-<!-- end client section -->
-
-
-
-<!-- contact section -->
-
-
-  <!-- end contact section -->
-
-
 @endsection
 

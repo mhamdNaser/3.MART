@@ -2,15 +2,11 @@
 @section('title')
 Services
 @endsection
-
 @section('service_active')
 active
 @endsection
-
 @section('container')
 
-
-<body>
     <div class="container mt-2">
         <div class="row">
             <div class="col-lg-12 margin-tb">
@@ -30,20 +26,18 @@ active
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    {{-- <th>S.No</th> --}}
-                    <th>service name</th>
-                    {{-- <th>category id</  th> --}}
-                    <th>Service Description</th>
-                    <th>Service Image</th> 
-                    <th>Service Price</th> 
-                    <th>Service Duration</th> 
+                    <th>service_name</th>
+                    <th>categoryid</th>
+                    <th>Service_Description</th>
+                    <th>Service_Image</th> 
+                    <th>Service_Price</th> 
+                    <th>Service_Duration</th> 
                     <th width="280px">Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($services as $service)
                     <tr>
-                      {{-- <td>{{ $service->id }}</td> --}}
                       <td>{{ $service->Service_Name }}</td>
                       {{-- <td>{{ $service->Category_id }}</td> --}}
                       <td>{{ $service->Service_Description }}</td>
@@ -57,16 +51,11 @@ active
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
-                            
-                                
                         </td>
                     </tr>
                     @endforeach
             </tbody>
         </table>
-        
     </div>
-</body>
-</html>
 @endsection
 
