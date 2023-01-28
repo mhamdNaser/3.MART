@@ -635,9 +635,10 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin-top: 20px;
+  padding: 10px;
 }
 
 .client_section .owl-carousel .owl-nav button {
