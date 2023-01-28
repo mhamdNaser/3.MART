@@ -13,13 +13,8 @@
         <link rel="shortcut icon" href="assets/img/icons/icon-48x48.png" />
     
         <link rel="canonical" href="https://demo-basic.adminkit.io/" />
-    
+        
         <title>@yield('title')</title>
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> dd2235d109d861cf1bc32957480f2a1dc7c9d6bc
         <link href="{{ URL::asset('assets/css/app.css') }}" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     </head>
