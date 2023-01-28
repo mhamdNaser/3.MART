@@ -33,7 +33,7 @@
                         <i class="fa fa-map-marker" aria-hidden="true"></i>
                         </div>
                         <p>
-                        Lorem Ipsum is simply dummy text
+                        AQABA/JORDAN
                         </p>
                     </div>
                     </a>
@@ -45,7 +45,7 @@
                         <i class="fa fa-phone" aria-hidden="true"></i>
                         </div>
                         <p>
-                        +02 1234567890
+                        +962778082245
                         </p>
                     </div>
                     </a>
@@ -57,7 +57,7 @@
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                         </div>
                         <p>
-                        demo@gmail.com
+                        inf@3MART.com
                         </p>
                     </div>
                     </a>
@@ -74,7 +74,7 @@
     <div class="container">
       <p>
         &copy; <span id="displayDateYear"></span> All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
+        <a href="https://html.design/">3MART</a>
       </p>
     </div>
   </footer>
