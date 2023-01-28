@@ -2,15 +2,11 @@
 @section('title')
 AddReservations
 @endsection
-
 @section('AddReservation_active')
 active
 @endsection
-
 @section('container')
-{{-- /////////////////////////////////////// --}}
 <h1>ADD RESERVATION</h1>
-
 <form action="{{route("Reservation.store")}}" method="post" enctype="multipart/form-data" >
     @csrf
     <label >Service_Id</label></br>
@@ -23,17 +19,12 @@ active
     <input type="text" name="Street_Name" id="Category_Name" class="form-control"></br>
     <label >Building_Number</label></br>
     <input type="text" name="Building_Number" id="Category_Name" class="form-control"></br>
-    {{-- time start --}}
     <label >Start_Time</label></br>
     <input type="datetime-local" name="Start_Time" id="Category_Name" class="form-control"></br>
-    {{-- time end --}}
     <label >End_Time</label></br>
     <input type="datetime-local" name="End_Time" id="Category_Name" class="form-control"></br>
-    {{-- Total_Price --}}
     <label >Total_Price</label></br>
     <input type="text" name="Total_Price" id="Category_Name" class="form-control"></br>
-    {{-- Total_Price --}}
-
     <input type="submit" value="Save" class="btn btn-success"></br>
 </form>
 @endsection
