@@ -1,13 +1,6 @@
 @extends('layout.master')
-
 @section('title', 'Contact')
-
 @section('content')
-
-
-
-  <!-- contact section -->
-
   <section class="contact_section layout_padding">
     <div class="container">
       <div class="heading_container">
@@ -47,7 +40,4 @@
       </div>
     </div>
   </section>
-
-  <!-- end contact section -->
-
   @endsection

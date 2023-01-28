@@ -2,12 +2,9 @@
 @section('title')
 categories
 @endsection
-
 @section('categories_active')
 active
 @endsection
-
-
 @section('container')
     <div class="row m-3">
     <div class="card m-3 col-4">
@@ -33,7 +30,5 @@ active
         </div>
     </div>
     </div>
-
-
 @endsection
 

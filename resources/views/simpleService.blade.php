@@ -1,9 +1,6 @@
 @extends('layout.master')
-
 @section('title', 'Contact')
-
 @section('content')
-
 <div class="container">
     <div id="demo"
         class="carousel slide"

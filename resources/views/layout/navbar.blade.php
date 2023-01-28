@@ -92,7 +92,6 @@
     <main class="content">
         <div class="container-fluid p-0">
             @yield('button')
-
             @yield('container')
         </div>
     </main>
