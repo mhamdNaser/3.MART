@@ -1,14 +1,12 @@
 @extends('layout.navbar')
-@section('title')
-categories
-@endsection
+@section('title', 'categories')
 
 @section('categories_active')
 active
 @endsection
 
 
- 
+
 
 
 @section('container')
@@ -17,7 +15,7 @@ active
 
   <div class="card m-3 col-11">
     <div class="card-body">
-         
+
       <form action="{{route('categories.index')}}" method="post" enctype="multipart/form-data" >
         @csrf
         <label for="Category_Name">Name</label></br>
@@ -60,7 +58,7 @@ active
 
 
 
-@endforeach 
+@endforeach
 
 
 
