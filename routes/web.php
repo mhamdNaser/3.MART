@@ -17,8 +17,7 @@ use App\Models\Service;
 */
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegisterController;
-
-
+use App\Models\Category;
 
 // Route::get('/', function () {
 //     return view('index');
@@ -26,7 +25,8 @@ use App\Http\Controllers\RegisterController;
 // Route::resource('services', ServiceController::class);
 
 Route::get('/', function () {
-    return view('home');
+    $all_categories=Category::get();
+    return view('home',["allcategories"=>$all_categories]);
 });
 Route::resource('categories', CategoryController::class);
 // Route::get('Reservation/cancel', 'ReservationController@cancel');
@@ -45,9 +45,9 @@ Route::get('about', function () {
     return view('about');
 });
 
-// Route::get('contact', function () {
-//     return view('contact');
-// });
+Route::get('contact', function () {
+    return view('contact');
+});
 
 Route::get('service', function () {
     $services = Service::all();

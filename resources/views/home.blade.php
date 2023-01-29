@@ -17,9 +17,9 @@
               Services
             </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui harum voluptatem adipisci. Quos molestiae saepe dicta nobis pariatur, tempora iusto, ad possimus soluta hic praesentium mollitia consequatur beatae, aspernatur culpa.
+              3MART is your one-stop shop for a wide range of home maintenance and repair solutions. 3MARAT service technicians are highly skilled craftsmen, so you know they will get the job done right the first time.
             </p>
-            <a href="">
+            <a href="/contact">
               Contact Us
             </a>
           </div>
@@ -56,7 +56,7 @@
           Repair
         </h5>
       </div>
-      <div class="box active">
+      <div class="box">
         <div class="img-box">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512">
             <g id="paint-painted-paint_roller-home-house" data-name="paint-painted-paint roller-home-house">
@@ -85,34 +85,6 @@
 
 <!-- end feature section -->
 
-<!-- about section -->
-
-<section class="about_section layout_padding-bottom">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-5 col-md-6">
-        <div class="detail-box">
-          <h2>
-            About us
-          </h2>
-          <p>
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomisedThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised
-          </p>
-          <a href="">
-            Read More
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-7 col-md-6">
-        <div class="img-box">
-          <img src="images/about-img.jpg" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- end about section -->
 
 
 <!-- professional section -->
@@ -132,9 +104,9 @@
             Home Services.
           </h2>
           <p>
-            randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All randomised words which don't look even slightly
+            Repeat customers from across the country love the convenience of working with us, and we love nothing better than improving your home; making it safer, more functional and simply a more comfortable place to live. Contact with us now.
           </p>
-          <a href="">
+          <a href="/about">
             Read More
           </a>
         </div>
@@ -146,64 +118,34 @@
 <!-- end professional section -->
 
 <!-- service section -->
-
 <section class="service_section layout_padding">
   <div class="container ">
     <div class="heading_container heading_center">
       <h2> Our Services </h2>
     </div>
     <div class="row">
+      {{--  --}}
+      @foreach ($allcategories as $category)
       <div class="col-sm-6 col-md-4 mx-auto">
         <div class="box ">
           <div class="img-box">
-            <img src="images/s1.png" alt="" />
+            <img src="{{URL::asset("storage/categoryImg/$category->Category_Image")}}" alt="" />
           </div>
           <div class="detail-box">
             <h5>
-              Maintenance
+              {{$category->Category_Name}}
             </h5>
             <p>
-              when looking at its layout. The point of using Lorem Ipsum is
-              that it has a more-or-less normal
+              {{$category->Category_Description}}
             </p>
           </div>
         </div>
       </div>
-      <div class="col-sm-6 col-md-4 mx-auto">
-        <div class="box ">
-          <div class="img-box">
-            <img src="images/s2.png" alt="" />
-          </div>
-          <div class="detail-box">
-            <h5>
-              Electrical
-            </h5>
-            <p>
-              when looking at its layout. The point of using Lorem Ipsum is
-              that it has a more-or-less normal
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4 mx-auto">
-        <div class="box ">
-          <div class="img-box">
-            <img src="images/s3.png" alt="" />
-          </div>
-          <div class="detail-box">
-            <h5>
-              Plumbing
-            </h5>
-            <p>
-              when looking at its layout. The point of using Lorem Ipsum is
-              that it has a more-or-less normal
-            </p>
-          </div>
-        </div>
-      </div>
+      @endforeach
+      {{--  --}}
     </div>
     <div class="btn-box">
-      <a href="">
+      <a href="/service">
         View More
       </a>
     </div>
@@ -339,50 +281,6 @@
 <!-- end client section -->
 
 
-
-<!-- contact section -->
-
-<section class="contact_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Contact Us
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <form action="">
-            <div>
-              <input type="text" placeholder="Name" />
-            </div>
-            <div>
-              <input type="text" placeholder="Phone Number" />
-            </div>
-            <div>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div>
-              <input type="text" class="message-box" placeholder="Message" />
-            </div>
-            <div class="d-flex ">
-              <button>
-                SEND
-              </button>
-            </div>
-          </form>
-        </div>
-        <div class="col-md-6">
-          <div class="map_container">
-            <div class="map">
-              <div id="googleMap" style="width:100%;height:100%;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end contact section -->
 
 
 @endsection
