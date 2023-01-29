@@ -35,8 +35,8 @@
               {{-- create ---------edit --}}
               @if (Route::has('login'))
               @auth
-              <a href="{{route('Reservation.show',$item->id)}}">                   
-              @else  
+              <a href="{{route('Reservation.show',$item->id)}}">
+              @else
               <a href="{{route('Reservation.show',$item->id)}}">
                 Book Now
               </a>
