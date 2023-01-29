@@ -11,6 +11,7 @@
       </div>
       <div class="row">
         {{-- ///////////////////////////// --}}
+
         @foreach ($collection as $item)
         <div class="col-sm-6 col-md-4 mx-auto">
           <div class="box ">
@@ -33,13 +34,15 @@
             </div>
             <div class="btn-box">
               {{-- create ---------edit --}}
-              @if (route::has('login'))
-              @auth
-              <a href="{{route('Reservation.show',$item->id)}}">                   
-              @else  
-              <a href="{{route('Reservation.show',$item->id)}}">
-                Book Now
-              </a>
+              @if (Route::has('login'))
+                @auth
+                <a href="{{route('Reservation.show',$item->id)}}">
+                @else
+                <a href="{{route('Reservation.show',$item->id)}}">
+                    Book Now
+                </a>
+                @endif
+              @endif
             </div>
           </div>
         </div>

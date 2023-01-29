@@ -39,7 +39,7 @@ class ReservationController extends Controller
             $res_to_send['Total_Price']= $res->Total_Price;
             $res_to_send['Status']= $res->Status;
             array_push($result,$res_to_send);
-        } 
+        }
         return view('admin.reservation.showreservation',['Reservations'=>$result]);
     }
 
@@ -103,7 +103,7 @@ class ReservationController extends Controller
      * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    
+
     public function edit(Reservation $reservation,$id)
     {
         //

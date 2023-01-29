@@ -12,8 +12,7 @@
  <div class="container-fluid py-4">
     <div class="row">
         <div class="col-12">
-            <div class="card my-4">
-
+            <div class="card my-4 border-top border-4 border-primary">
                 <h3 class="p-3 text-capitalize text-dark text-center fw-bold">Users Table</h3>
                 <table class="table align-items-center mb-0 shadow-lg">
                     <thead>

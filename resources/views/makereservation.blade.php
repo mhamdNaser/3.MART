@@ -1,11 +1,5 @@
-<head>
-  
-</head>
 @extends('layout.master')
-
-@section('title')
-  submit your booking
-@endsection
+@section('title', 'submit your booking')
 
 @section('content')
 {{-- user masseges --}}

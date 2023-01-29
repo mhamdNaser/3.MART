@@ -32,12 +32,13 @@ Route::get('contact', function () { return view('contact'); });
 Route::get('service', function () { return view('service'); });
 Route::get('profile', function () { return view('profile'); });
 Route::get('cart', function () { return view('cart'); });
-
-
+Route::get('dashboard', function () { return view('index'); });
 
 Route::resource('categories', CategoryController::class);
-// Route::get('Reservation/cancel', 'ReservationController@cancel');
 Route::resource('Reservation', ReservationController::class);
+Route::resource('Service', ServiceController::class);
+Route::resource('categories', CategoryController::class);
+Route::resource('user', UserController::class);
 
 
 Route::controller(RegisterController::class)->group(function(){
@@ -48,30 +49,11 @@ Route::controller(RegisterController::class)->group(function(){
     Route::get('logout', 'destroy')->name('logout');
 });
 
-
-// Route::get('contact', function () {
-//     return view('contact');
+// Route::get('service', function () {
+//     $services = Service::all();
+//     return view('service',["collection"=>$services]);
 // });
 
-Route::get('service', function () {
-    $services = Service::all();
-    return view('service',["collection"=>$services]);
-});
 
-Route::get('dashboard', function () {
-    return view('index');
-});
-
-
-Route::resource('Service', ServiceController::class);
-// Route::resource('Service.edit/{id}',ServiceController::class);
-
-Route::resource('categories', CategoryController::class);
-
-Route::resource('user', UserController::class);
-
-// Route::get('servicebook', function () {
-//     return view('makereservation');
-// });
 
 

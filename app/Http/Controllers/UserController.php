@@ -49,6 +49,7 @@ class UserController extends Controller
 
         // insert user
         $user = new user();
+        $user->role = $request->Role;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->phone = $request->phone;
