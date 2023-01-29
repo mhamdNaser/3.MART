@@ -1,73 +1,97 @@
 
 @extends('layout.navbar')
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-@section('title')
-Reservations
-@endsection
+@section('title', 'Reservations')
+@section('Reservation_active', 'active')
 
-@section('Reservation_active')
-active
+@section('button')
+    <a href="{{route('Reservation.create')}}"><button type="button" class="btn btn-dark" >Add New Reservation</button></a>
 @endsection
 
 @section('container')
-<main class="m-2 p-8 w-full">
-    <div>
-        @if (session()->has('danger'))
-            <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800"
-                role="alert">
-                <span class="font-medium" style="color: red">{{ session()->get('danger') }}!</span>
-            </div>
-        @endif
-        @if (session()->has('success'))
-            <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800"
-                role="alert">
-                <span class="font-medium" style="color: green">{{ session()->get('success') }}!</span>
-            </div>
-        @endif
-        @if (session()->has('warning'))
-            <div class="p-4 mb-4 text-sm text-yellow-700 bg-yellow-100 rounded-lg dark:bg-yellow-200 dark:text-yellow-800"
-                role="alert">
-                <span class="font-medium" style="color: yalow">{{ session()->get('warning') }}!</span>
-            </div>
-        @endif
-    </div>
-</main>
-<a href="{{route("Reservation.create")}}">
-    ADD
-</a>
-<table class="table mb-0">
-    <thead>
-        <tr>
-            <td>Service</td>
-            <td>User</td>
-            <td>Location</td>
-            <td>Reservation Time</td>
-            <td>Total_Price</td>
-            <td>Status</td>
-            <td>Action</td>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($Reservations as $item)
-        <tr>
-            <td>{{$item["Service"]}}</td>
-            <td>{{$item["User"]}}</td>
-            <td>{{$item["location"]}}</td>
-            <td>{{$item["Time"]}}</td>
-            <td>{{$item["Total_Price"]}}</td>
-            <td>{{$item["Status"]}}</td>
-            <td>
-            <a href="{{route('Reservation.edit',$item["id"])}}"><button class="btn btn-success">Confirm</button></a>
-            <form action="{{route('Reservation.destroy',$item["id"])}}" method="post">
-                @csrf
-                @method('DELETE')
-                <button class="btn btn-danger" type="submit">DELETE</button>
-            </form>
-            </td> 
-        </tr>
-        @endforeach
-       
-    </tbody>
-</table> 
 
+    <main class="m-2 p-8 w-full">
+        <div>
+            @if (session()->has('danger'))
+                <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800"
+                    role="alert">
+                    <span class="font-medium">{{ session()->get('danger') }}!</span>
+                </div>
+            @endif
+            @if (session()->has('success'))
+                <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800"
+                    role="alert">
+                    <span class="font-medium">{{ session()->get('success') }}!</span>
+                </div>
+            @endif
+            @if (session()->has('warning'))
+                <div class="p-4 mb-4 text-sm text-yellow-700 bg-yellow-100 rounded-lg dark:bg-yellow-200 dark:text-yellow-800"
+                    role="alert">
+                    <span class="font-medium">{{ session()->get('warning') }}!</span>
+                </div>
+            @endif
+        </div>
+    </main>
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card my-4">
+                <h3 class="p-3 text-capitalize text-dark text-center fw-bold">Reservation Table</h3>
+                <table class="table align-items-center mb-0 shadow-lg">
+                    <thead>
+                        <tr>
+                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                Service
+                            </th>
+                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                User
+                            </th>
+                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                Location
+                            </th>
+                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                Reservation Time
+                            </th>
+                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                Total_Price
+                            </th>
+                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                Status
+                            </th>
+                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($Reservations as $item)
+                        <tr>
+                            <td class="align-middle text-center">{{$item["Service"]}}</td>
+                            <td class="align-middle text-center">{{$item["User"]}}</td>
+                            <td class="align-middle text-center">{{$item["location"]}}</td>
+                            <td class="align-middle text-center">{{$item["Time"]}}</td>
+                            <td class="align-middle text-center">{{$item["Total_Price"]}}</td>
+                            <td class="align-middle text-center">{{$item["Status"]}}</td>
+                            <td class="align-middle text-center">
+                                <div class="d-flex">
+                                    <div class="p-1  border border-0">
+                                        <form action="{{route('Reservation.destroy',$item["id"])}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger" type="submit">Delete</button>
+                                        </form>
+                                    </div>
+                                    <div class="p-1  border border-0">
+                                        <a href="{{route('Reservation.edit',$item["id"])}}"><button class="btn btn-primary">Confirm</button></a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

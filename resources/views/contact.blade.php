@@ -1,12 +1,9 @@
 @extends('layout.master')
 
+@section('ContactUs_active', 'active')
+
 @section('title', 'Contact')
-
 @section('content')
-
-
-
-  <!-- contact section -->
 
   <section class="contact_section layout_padding">
     <div class="container">
@@ -16,7 +13,7 @@
         </h2>
       </div>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
           <form action="">
             <div>
               <input type="text" placeholder="Name" />
@@ -31,23 +28,15 @@
               <input type="text" class="message-box" placeholder="Message" />
             </div>
             <div class="d-flex ">
-              <button>
+              <button >
                 SEND
               </button>
             </div>
           </form>
         </div>
-        <div class="col-md-6">
-          <div class="map_container">
-            <div class="map">
-              <div id="googleMap" style="width:100%;height:100%;"></div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
   </section>
-
-  <!-- end contact section -->
-
   @endsection

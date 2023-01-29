@@ -1,13 +1,10 @@
 @extends('layout.master')
-
 @section('title', 'register')
-
 @section('content')
     <div class="row m-5">
         <div class="col-lg-8 p-5 bg-white">
             <form class="form-group mx-sm-3 mb-2" action="{{route('register')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-
                 <h2 class="ms-3">Register</h2>
                 <div class="form-group col-lg-10 mb-3">
                     <label>User Name</label>
@@ -32,7 +29,6 @@
                 <div class="form-group col-lg-10 mb-3">
                     <button type="submit" class="btn btn-dark ms-3">Add</button>
                 </div>
-
             </form>
         </div>
     </div>
