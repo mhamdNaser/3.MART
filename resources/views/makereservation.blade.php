@@ -34,7 +34,7 @@
   <!-- contact section -->
   <h1>Fill your information to complete your booking</h1>
   <form action="{{route("Reservation.store")}}" method="post" enctype="multipart/form-data" >
-    <h1>{{$serviceid}}</h1>
+    {{-- <h1>{{$serviceid}}</h1> --}}
       @csrf
       <input type="hidden" name="serviceid" id="Category_Name" class="form-control" value={{$serviceid}}><br>
       <label >City</label><br>

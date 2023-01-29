@@ -105,7 +105,6 @@
                 </div>
             </nav>
 
-{{-- //////////////////////////////////////////////////////////////// --}}
           <form action="{{route('Service.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="card m-2 col-9">
@@ -136,7 +135,6 @@
             </div>
           </div>
         </form>
-{{-- //////////////////////////////////////////////////////////////// --}}
 
           
 

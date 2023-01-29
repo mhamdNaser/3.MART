@@ -1,5 +1,6 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
 @extends('layout.navbar')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 @section('title')
 Reservations
 @endsection
@@ -14,19 +15,19 @@ active
         @if (session()->has('danger'))
             <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800"
                 role="alert">
-                <span class="font-medium">{{ session()->get('danger') }}!</span>
+                <span class="font-medium" style="color: red">{{ session()->get('danger') }}!</span>
             </div>
         @endif
         @if (session()->has('success'))
             <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800"
                 role="alert">
-                <span class="font-medium">{{ session()->get('success') }}!</span>
+                <span class="font-medium" style="color: green">{{ session()->get('success') }}!</span>
             </div>
         @endif
         @if (session()->has('warning'))
             <div class="p-4 mb-4 text-sm text-yellow-700 bg-yellow-100 rounded-lg dark:bg-yellow-200 dark:text-yellow-800"
                 role="alert">
-                <span class="font-medium">{{ session()->get('warning') }}!</span>
+                <span class="font-medium" style="color: yalow">{{ session()->get('warning') }}!</span>
             </div>
         @endif
     </div>

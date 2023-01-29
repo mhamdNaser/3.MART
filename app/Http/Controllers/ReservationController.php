@@ -64,7 +64,7 @@ class ReservationController extends Controller
      */
     public function store(ReservationStoreRequest $request)
     {
-        dd($request->serviceid);
+        // dd($request->serviceid);
         $request_date = Carbon::parse($request->Start_Time);
         $reservations = Reservation::get();
         foreach ($reservations as $res) {
@@ -76,10 +76,13 @@ class ReservationController extends Controller
             $new_res=$request->validated();
             $new_res["End_Time"]= $request_date->addHours($service->Service_Duration);
             $new_res["Total_Price"]= ($service->Service_Price);
-            dd($new_res["Total_Price"]);
+            $new_res["Service_Id"]= ($request->serviceid);
+            $new_res["User_Id"]= 1;
+            // auth::user()->id
+            // dd($new_res["Total_Price"]);
         Reservation::create($new_res);
         // dd($request->validated());
-        return back()->with('warning','this time is reserved pick another time');
+        return back()->with('warning','THANK YOU ,your reservation will be confirmed soon');
     }
 
     /**
@@ -104,7 +107,7 @@ class ReservationController extends Controller
     public function edit(Reservation $reservation,$id)
     {
         //
-        return view('makereservation');
+        // return view('makereservation');
         $res = Reservation::findorFail($id);
         $res->Status = "Confirmed";
         $res->save();
