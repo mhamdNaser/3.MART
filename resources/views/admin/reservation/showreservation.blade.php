@@ -1,3 +1,4 @@
+
 @extends('layout.navbar')
 @section('title', 'Reservations')
 @section('Reservation_active', 'active')
@@ -7,6 +8,7 @@
 @endsection
 
 @section('container')
+
     <main class="m-2 p-8 w-full">
         <div>
             @if (session()->has('danger'))
@@ -87,6 +89,7 @@
                         @endforeach
                     </tbody>
                 </table>
+
             </div>
         </div>
     </div>

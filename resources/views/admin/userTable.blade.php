@@ -3,7 +3,9 @@
 @section('user_active', 'active')
 
 @section('button')
+
     <a href="{{route('user.create')}}"><button type="button" class="btn btn-dark" >Add New User</button></a>
+
 @endsection
 
 @section('container')
@@ -11,6 +13,7 @@
     <div class="row">
         <div class="col-12">
             <div class="card my-4">
+
                 <h3 class="p-3 text-capitalize text-dark text-center fw-bold">Users Table</h3>
                 <table class="table align-items-center mb-0 shadow-lg">
                     <thead>
@@ -64,6 +67,7 @@
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
+
                                     </div>
                                     <div class="p-1  border border-0">
                                         <a href="{{route('user.edit', $user->id)}}"><button type="submit" class="btn btn-primary">Edit</button></a>

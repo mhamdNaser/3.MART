@@ -39,16 +39,16 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        if (!$request->Service_Price){
-            $price = $request->Service_Price;
-        }else {
-            $price = 0;
-        }
-        if (!$request->Service_Duration){
-            $duration = $request->Service_Duration;
-        }else {
-            $duration = 0;
-        }
+        // if (!$request->Service_Price){
+        //     $price = $request->Service_Price;
+        // }else {
+        //     $price = 0;
+        // }
+        // if (!$request->Service_Duration){
+        //     $duration = $request->Service_Duration;
+        // }else {
+        //     $duration = 0;
+        // }
         
         $imgname = $request->file('Service_Image')->getClientOriginalName();
         $request->file('Service_Image')->storeAs('public/serviceimage',$imgname);
@@ -57,8 +57,8 @@ class ServiceController extends Controller
         $serv->Category_id = $request->Category_id;
         $serv->Service_Description = $request->Service_Description;
         $serv->Service_Image = $imgname;
-        $serv->Service_Price = $price;
-        $serv->Service_Duration = $duration;
+        $serv->Service_Price = $request->Service_Price;
+        $serv->Service_Duration = $request->Service_Duration;
         $serv->save();
         
        
