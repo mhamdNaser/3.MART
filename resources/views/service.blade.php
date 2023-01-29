@@ -13,7 +13,7 @@
         {{-- ///////////////////////////// --}}
         @foreach ($collection as $item)
         <div class="col-sm-6 col-md-4 mx-auto">
-          <div class="box ">
+          <div class="box" style="min-height: 30em">
             <div class="img-box">
               <img src="{{URL::asset("storage/serviceimage/$item->Service_Image")}}" alt="" />
             </div>
@@ -22,20 +22,22 @@
                 {{$item->Service_Name}}
               </h5>
               <h6>
-                {{$item->Service_Price}} JD
+                Service Price : {{$item->Service_Price}} JD
               </h6>
               <h6>
-                {{$item->Service_Duration}} Hours
+                Service Duration : {{$item->Service_Duration}} Hours
               </h6>
               <p>
                 {{$item->Service_Description}}
               </p>
             </div>
-            <div class="btn-box">
+            <div class="btn-box" >
               {{-- create ---------edit --}}
               @if (Route::has('login'))
               @auth
-              <a href="{{route('Reservation.show',$item->id)}}">                   
+              <a href="{{route('Reservation.show',$item->id)}}">
+                Book Now
+              </a>                   
               @else  
               <a href="{{route('Reservation.show',$item->id)}}">
                 Book Now
@@ -46,28 +48,8 @@
           </div>
         </div>
         @endforeach
-        <div class="col-sm-6 col-md-4 mx-auto">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/s2.png" alt="" />
-            </div>
-            <div class="detail-box">
-              <h5>
-                Electrical
-              </h5>
-              <p>
-                when looking at its layout. The point of using Lorem Ipsum is
-                that it has a more-or-less normal
-              </p>
-            </div>
-            <div class="btn-box">
-              <a href="">
-                View More
-              </a>
-            </div>
-          </div>
-        </div>
 {{-- /////////////////////////////////////////////////// --}}
     </div>
-  </section>
+  </div>
+</section>
 @endsection

@@ -115,7 +115,7 @@
       {{--  --}}
       @foreach ($allcategories as $category)
       <div class="col-sm-6 col-md-4 mx-auto">
-        <div class="box ">
+        <div class="box" style="min-height: 20em">
           <div class="img-box">
             <img src="{{URL::asset("storage/categoryImg/$category->Category_Image")}}" alt="" />
           </div>
