@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -44,19 +45,20 @@ class UserController extends Controller
 
         $user_img = $request->file('image')->getClientOriginalName();
         $request->file('image')->storeAs('public/userimage',$user_img);
+        var_dump($request->file('upload_file'));
 
         // insert user
         $user = new user();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->phone = $request->phone;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);
         $user->User_Image = $user_img;
         $user->save();
 
-        return response('User Add Successfully');
 
 
+        return redirect('user');
     }
 
     /**
@@ -94,18 +96,24 @@ class UserController extends Controller
     {
         //
 
-        $user_img = $request->file('image')->getClientOriginalName();
-        $request->file('image')->storeAs('public/userimage',$user_img);
+        // $user_img = $request->file('image')->getClientOriginalName();
+        // $request->file('image')->storeAs('public/userimage',$user_img);
 
         // Update User
         $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->email = $request->email;
         $user->phone = $request->phone;
-        $user->password = $request->password;
-        $user->User_Image = $user_img;
+        $user->password = Hash::make($request->password);
+        // $user->User_Image = $user_img;
+        if ($request->hasFile('image')) {
+            $user_img = $request->file('image')->getClientOriginalName();
+            $request->file('image')->storeAs('public/userimage',$user_img);
+            $user->User_Image = $user_img;
+        }
         $user->save();
-        return redirect()->route('user.userTable');
+
+        return redirect('user');
 
 
     }
