@@ -10,22 +10,40 @@
         <h2> Our Services </h2>
       </div>
       <div class="row">
+        {{-- ///////////////////////////// --}}
+        @foreach ($collection as $item)
         <div class="col-sm-6 col-md-4 mx-auto">
           <div class="box ">
             <div class="img-box">
-              <img src="images/s1.png" alt="" />
+              <img src="{{URL::asset("storage/serviceimage/$item->Service_Image")}}" alt="" />
             </div>
             <div class="detail-box">
               <h5>
-                Maintenance
+                {{$item->Service_Name}}
               </h5>
+              <h6>
+                {{$item->Service_Price}} JD
+              </h6>
+              <h6>
+                {{$item->Service_Duration}} Hours
+              </h6>
               <p>
-                when looking at its layout. The point of using Lorem Ipsum is
-                that it has a more-or-less normal
+                {{$item->Service_Description}}
               </p>
+            </div>
+            <div class="btn-box">
+              {{-- create ---------edit --}}
+              @if (route::has('login'))
+              @auth
+              <a href="{{route('Reservation.show',$item->id)}}">                   
+              @else  
+              <a href="{{route('Reservation.show',$item->id)}}">
+                Book Now
+              </a>
             </div>
           </div>
         </div>
+        @endforeach
         <div class="col-sm-6 col-md-4 mx-auto">
           <div class="box ">
             <div class="img-box">
@@ -40,30 +58,14 @@
                 that it has a more-or-less normal
               </p>
             </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 mx-auto">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/s3.png" alt="" />
-            </div>
-            <div class="detail-box">
-              <h5>
-                Plumbing
-              </h5>
-              <p>
-                when looking at its layout. The point of using Lorem Ipsum is
-                that it has a more-or-less normal
-              </p>
+            <div class="btn-box">
+              <a href="">
+                View More
+              </a>
             </div>
           </div>
         </div>
-      </div>
-      <div class="btn-box">
-        <a href="">
-          View More
-        </a>
-      </div>
+{{-- /////////////////////////////////////////////////// --}}
     </div>
   </section>
 @endsection

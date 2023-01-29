@@ -14,15 +14,16 @@
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap.css') }}" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <!-- font awesome style -->
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/font-awesome.min.css') }}" />
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="{{ URL::asset('css/style.css') }}"  rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="{{ URL::asset('css/responsive.css') }}"  rel="stylesheet" />
+
 </head>
 <body>
   <div class="hero_area bg-light">

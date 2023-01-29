@@ -1,3 +1,4 @@
+
 @extends('layout.navbar')
 @section('title')
 Services
@@ -6,36 +7,40 @@ Services
 active
 @endsection
 @section('container')
+
           <form action="{{route('Service.store')}}" method="post" enctype="multipart/form-data">
             @csrf
-            <div class="card m-3 col-4">
+            <div class="card m-2 col-9">
               <div class="card-body">
-                <input type="text" class="form-control" placeholder="Name" name="Service_Name">
+                <input type="text" class="form-control" placeholder="Service Name" name="Service_Name">
               </div>
               <div class="card-body">
               <select name="Category_id" id=""  class="form-control">
+                <option value="">choose category for service</option>  
                 @foreach ($categories as $item)
                 <option value="{{$item->id}}">{{$item->Category_Name}}</option>    
                 @endforeach
               </select>
             </div>
               <div class="card-body">
-                <textarea class="form-control"  placeholder="Desc" name="Service_Description"></textarea>
+                <textarea class="form-control"  placeholder="Description" name="Service_Description"></textarea>
               </div>
               <div class="card-body">
                 <input type="file" class="form-control" placeholder="Input" name="Service_Image">
               </div>
               <div class="card-body">
-                <input type="number" class="form-control" placeholder="Input" name="Service_Price">
+                <input type="number" class="form-control" placeholder="Service Price" name="Service_Price" min="1">
               </div>
               <div class="card-body">
-                <input type="number" class="form-control" placeholder="Input" name="Service_Duration">
+                <input type="number" class="form-control" placeholder="Service Duration in hours" name="Service_Duration" min="1">
               </div>
-              <button type="submit">save</button>
+              <button type="submit" class="btn btn-success">save</button>
             </div>
           </div>
         </form>
+
         @endsection
+
 
           
 
