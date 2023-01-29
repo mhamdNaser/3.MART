@@ -15,8 +15,9 @@
               Services
             </h1>
             <p>
-              refer to the various services that are provided to repair, maintain and improve the condition of various equipment, systems and structures. These services can be performed on a wide range of items including but not limited to, home appliances, automotive systems, HVAC systems, plumbing systems and electrical systems. </p>
-            <a href="">
+              3MART is your one-stop shop for a wide range of home maintenance and repair solutions. 3MARAT service technicians are highly skilled craftsmen, so you know they will get the job done right the first time.
+            </p>
+            <a href="/contact">
               Contact Us
             </a>
           </div>
@@ -50,7 +51,7 @@
           Repair
         </h5>
       </div>
-      <div class="box active">
+      <div class="box">
         <div class="img-box">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512">
             <g id="paint-painted-paint_roller-home-house" data-name="paint-painted-paint roller-home-house">
@@ -91,12 +92,11 @@
             Home Services.
           </h2>
           <p>
-            "We Provide Professional Home Services" is a statement that can be used by a business or individual that offers a variety of professional services for homes. These services can include, but not limited to:
-             Cleaning services: This includes regular cleaning of homes, deep cleaning, and specialized cleaning services such as carpet cleaning and window cleaning.
-             Home repairs: This includes repairs to various parts of the home such as plumbing, electrical, carpentry, and painting.
-             Home maintenance: This includes regular maintenance of various parts of the home such as HVAC systems, appliances, and outdoor spaces.
+            Repeat customers from across the country love the convenience of working with us, and we love nothing better than improving your home; making it safer, more functional and simply a more comfortable place to live. Contact with us now.
           </p>
-
+          <a href="/about">
+            Read More
+          </a>
         </div>
       </div>
     </div>
@@ -106,64 +106,34 @@
 <!-- end professional section -->
 </div>
 <!-- service section -->
-
 <section class="service_section layout_padding">
   <div class="container ">
     <div class="heading_container heading_center">
       <h2> Our Services </h2>
     </div>
     <div class="row">
+      {{--  --}}
+      @foreach ($allcategories as $category)
       <div class="col-sm-6 col-md-4 mx-auto">
         <div class="box ">
           <div class="img-box">
-            <img src="images/s1.png" alt="" />
+            <img src="{{URL::asset("storage/categoryImg/$category->Category_Image")}}" alt="" />
           </div>
           <div class="detail-box">
             <h5>
-              Maintenance
+              {{$category->Category_Name}}
             </h5>
             <p>
-              when looking at its layout. The point of using Lorem Ipsum is
-              that it has a more-or-less normal
+              {{$category->Category_Description}}
             </p>
           </div>
         </div>
       </div>
-      <div class="col-sm-6 col-md-4 mx-auto">
-        <div class="box ">
-          <div class="img-box">
-            <img src="images/s2.png" alt="" />
-          </div>
-          <div class="detail-box">
-            <h5>
-              Electrical
-            </h5>
-            <p>
-              when looking at its layout. The point of using Lorem Ipsum is
-              that it has a more-or-less normal
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4 mx-auto">
-        <div class="box ">
-          <div class="img-box">
-            <img src="images/s3.png" alt="" />
-          </div>
-          <div class="detail-box">
-            <h5>
-              Plumbing
-            </h5>
-            <p>
-              when looking at its layout. The point of using Lorem Ipsum is
-              that it has a more-or-less normal
-            </p>
-          </div>
-        </div>
-      </div>
+      @endforeach
+      {{--  --}}
     </div>
     <div class="btn-box">
-      <a href="">
+      <a href="/service">
         View More
       </a>
     </div>
@@ -290,5 +260,11 @@
     </div>
   </div>
 </section>
+
+<!-- end client section -->
+
+
+
+
 @endsection
 
