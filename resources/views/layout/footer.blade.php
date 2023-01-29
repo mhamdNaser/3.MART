@@ -1,6 +1,6 @@
   <!-- info section -->
   <section class="info_section">
-    <div class="row justify-content-center align-items-center g-2 mb-4">
+    <div class="justify-content-center align-items-center g-2 mb-4">
         <div class="navbar navbar-expand navbar-dark">
             <ul class="navbar-nav flex-grow-1 d-lg-none d-flex text-center">
                 <li class="nav-item">
@@ -18,7 +18,6 @@
             </ul>
         </div>
     </div>
-
     <div class="container">
         <h4>
             Get In Touch
@@ -34,7 +33,7 @@
                         <i class="fa fa-map-marker" aria-hidden="true"></i>
                         </div>
                         <p>
-                        Lorem Ipsum is simply dummy text
+                        AQABA/JORDAN
                         </p>
                     </div>
                     </a>
@@ -46,7 +45,7 @@
                         <i class="fa fa-phone" aria-hidden="true"></i>
                         </div>
                         <p>
-                        +02 1234567890
+                        +962778082245
                         </p>
                     </div>
                     </a>
@@ -58,7 +57,7 @@
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                         </div>
                         <p>
-                        demo@gmail.com
+                        inf@3MART.com
                         </p>
                     </div>
                     </a>
@@ -70,19 +69,16 @@
     </div>
     </div>
 </section>
-
-
   <!-- footer section -->
   <footer class="footer_section">
     <div class="container">
       <p>
         &copy; <span id="displayDateYear"></span> All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
+        <a href="https://html.design/">3MART</a>
       </p>
     </div>
   </footer>
   <!-- footer section -->
-
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -91,8 +87,6 @@
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- End Google Map -->
-
-
 </body>
 
 </html>

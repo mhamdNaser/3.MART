@@ -81,16 +81,6 @@ public function index()
         return view('admin.categories.editcategories', compact('category'));
     }
 
-
-
-
-
-
-
-
-
-    
-
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([

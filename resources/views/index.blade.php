@@ -1,12 +1,9 @@
 @extends('layout.navbar')
 @section('title')
-    talab
+    Dashboard
 @endsection
-
 @section('Dashboard_active')
 active
 @endsection
-
 @section('container')
-
 @endsection

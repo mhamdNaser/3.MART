@@ -1,19 +1,12 @@
 @extends('layout.master')
-
 @section('title', 'Contact')
-
 @section('content')
-
 <section style="background-color: #eee;">
     <div class="container py-5">
       <div class="row">
         <div class="col">
           <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
-            <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">User</a></li>
-              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
-            </ol>
+            <h3>profile</h3>
           </nav>
         </div>
       </div>
@@ -181,6 +174,4 @@
       </div>
     </div>
   </section>
-<!-- end contact section -->
-
 @endsection

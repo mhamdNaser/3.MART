@@ -2,22 +2,17 @@
 @section('title')
 Users
 @endsection
-
 @section('user_active')
 active
 @endsection
-
-
 @section('container')
-
 <div class="container-fluid">
     <br><br>
         <h1>Update User</h1>
         <br><br>
-        <form class="form-group mx-sm-3 mb-2" action="{{url('user.update',$user->id)}}" method="POST" enctype="multipart/form-data">
+        <form class="form-group mx-sm-3 mb-2" action="{{route('user.update',$user->id)}}" method="POST" enctype="multipart/form-data">
             @method('PUT')
             @csrf
-
             <div class="form-group col-md-4 mb-3">
               <label>User Name</label>
               <input type="text" class="form-control" name="name" value="{{$user->name}}" >
@@ -32,7 +27,7 @@ active
             </div>
             <div class="form-group col-md-4 mb-3">
               <label >Password</label>
-              <input type="password" class="form-control" name="password" value="{{$user->password}}" >
+              <input type="password" class="form-control" name="password" value="" >
             </div>
             <div class="form-group col-md-4 mb-3">
                 <label >User Image</label><br>
@@ -40,7 +35,5 @@ active
               </div>
             <button type="submit" class="btn btn-dark">Update</button>
           </form>
-
 </div>
-
 @endsection

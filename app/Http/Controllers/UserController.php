@@ -45,6 +45,7 @@ class UserController extends Controller
 
         $user_img = $request->file('image')->getClientOriginalName();
         $request->file('image')->storeAs('public/userimage',$user_img);
+        var_dump($request->file('upload_file'));
 
         // insert user
         $user = new user();
@@ -54,6 +55,8 @@ class UserController extends Controller
         $user->password = Hash::make($request->password);
         $user->User_Image = $user_img;
         $user->save();
+
+
 
         return redirect('user');
     }
@@ -93,8 +96,8 @@ class UserController extends Controller
     {
         //
 
-        $user_img = $request->file('image')->getClientOriginalName();
-        $request->file('image')->storeAs('public/userimage',$user_img);
+        // $user_img = $request->file('image')->getClientOriginalName();
+        // $request->file('image')->storeAs('public/userimage',$user_img);
 
         // Update User
         $user = User::findOrFail($id);
@@ -102,7 +105,12 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->phone = $request->phone;
         $user->password = Hash::make($request->password);
-        $user->User_Image = $user_img;
+        // $user->User_Image = $user_img;
+        if ($request->hasFile('image')) {
+            $user_img = $request->file('image')->getClientOriginalName();
+            $request->file('image')->storeAs('public/userimage',$user_img);
+            $user->User_Image = $user_img;
+        }
         $user->save();
 
         return redirect('user');

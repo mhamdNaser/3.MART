@@ -1,7 +1,5 @@
 @extends('layout.master')
-
 @section('title', 'login')
-
 @section('content')
 <div class="container-fluid">
     <br><br>
@@ -20,7 +18,5 @@
             </div>
             <button type="submit" class="btn btn-dark">Add</button>
           </form>
-
 </div>
-
 @endsection
