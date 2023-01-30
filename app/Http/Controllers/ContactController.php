@@ -15,7 +15,7 @@ class ContactController extends Controller
     public function index()
     {
         //
-        return view('contact');
+        return view('massage');
     }
 
     /**
@@ -36,12 +36,7 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $new_mssg = [
-
-        ]
         // Contact::create($new_mssg);
-
     }
 
     /**

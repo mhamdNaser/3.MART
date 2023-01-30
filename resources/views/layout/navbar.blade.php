@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item @yield('massage_active')">
-                    <a class="sidebar-link" href="">
+                    <a class="sidebar-link" href="{{route('contact.index')}}">
                         <span class="align-middle">Massage</span>
                     </a>
                 </li>

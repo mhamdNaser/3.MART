@@ -24,6 +24,7 @@ return new class extends Migration
             $table->dateTime("End_Time")->nullable();
             $table->double("Total_Price")->nullable();
             $table->string("Status")->default("Pending");
+            $table->string("Reject_Reason")->nullable();
             $table->timestamps();
         });
     }
