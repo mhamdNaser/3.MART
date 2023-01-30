@@ -4,7 +4,15 @@
 @section('Services_active', 'active')
 
 @section('content')
-  <section class="service_section layout_padding">
+<div class="d-flex justify-content-center">
+    <div class="col-lg-3">
+        <form class="d-flex" style="margin-top: -2rem">
+            <input class="form-control me-2" type="text" placeholder="Search">
+            <button class="btn btn-primary" type="button">Search</button>
+        </form>
+    </div>
+  </div>
+<section class="service_section layout_padding">
     <div class="container ">
       <div class="heading_container heading_center">
         <h2> Our Services </h2>
@@ -87,3 +95,4 @@
         </div>
     </div>
   </section> --}}
+

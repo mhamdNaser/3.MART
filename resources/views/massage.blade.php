@@ -1,12 +1,6 @@
 @extends('layout.navbar')
-@section('title', 'Users')
-@section('user_active', 'active')
-
-@section('button')
-
-    <a href="{{route('user.create')}}"><button type="button" class="btn btn-dark" >Add New User</button></a>
-
-@endsection
+@section('title', 'Massage')
+@section('massage_active', 'active')
 
 @section('container')
  <div class="container-fluid py-4">

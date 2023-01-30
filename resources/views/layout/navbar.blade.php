@@ -49,14 +49,20 @@
                         <span class="align-middle">User</span>
                     </a>
                 </li>
-                <li class="sidebar-item @yield('categories_active')">
-                    <a class="sidebar-link" href="{{route('categories.index')}}">
-                        <span class="align-middle">category</span>
+                <li class="sidebar-item @yield('massage_active')">
+                    <a class="sidebar-link" href="">
+                        <span class="align-middle">Massage</span>
                     </a>
                 </li>
+                <hr class="text-light py-2" style="width: 50%; margin: 0 auto">
                 <li class="sidebar-item @yield('service_active') ">
                     <a class="sidebar-link" href="{{route('Service.index')}}">
                         <span class="align-middle">service</span>
+                    </a>
+                </li>
+                <li class="sidebar-item @yield('categories_active')">
+                    <a class="sidebar-link" href="{{route('categories.index')}}">
+                        <span class="align-middle">category</span>
                     </a>
                 </li>
                 <li class="sidebar-item @yield('Reservation_active') ">
@@ -65,7 +71,7 @@
                     </a>
                 </li>
             </ul>
-            <div class="mt-5 pt-1">
+            <div class="mt-4">
                 <div class="sidebar-nav text-center mt-5">
                     <li class="sidebar-item @yield('Dashboard_active')">
                         <a class="sidebar-link" href="/">
@@ -111,6 +117,7 @@
             </div>
         </main>
     </div>
+</div>
 
 <script src="{{ URL::asset('assets/js/app.js') }}"></script>
 <script>
