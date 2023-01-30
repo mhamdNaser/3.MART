@@ -4,6 +4,14 @@
 @section('Services_active', 'active')
 
 @section('content')
+<div class="d-flex justify-content-center">
+    <div class="col-lg-3">
+        <form class="d-flex" style="margin-top: -2rem">
+            <input class="form-control me-2" type="text" placeholder="Search">
+            <button class="btn btn-primary" type="button">Search</button>
+        </form>
+    </div>
+</div>
 <div class="container py-5">
     @foreach ($collection as $item)
     <div class="row justify-content-center mb-3">
