@@ -54,7 +54,7 @@
   </div>
 </section>
 @endsection
-<section style="background-color: #eee;">
+{{-- <section style="background-color: #eee;">
     <div class="text-center container py-5">
         <h4 class="mt-4 mb-5"><strong>Bestsellers</strong></h4>
         <div class="row">
@@ -86,4 +86,4 @@
             </div>
         </div>
     </div>
-  </section>
+  </section> --}}
