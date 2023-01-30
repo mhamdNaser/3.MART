@@ -15,7 +15,7 @@ class ContactController extends Controller
     public function index()
     {
         //
-        return view('massage');
+        return view('contact');
     }
 
     /**
@@ -25,7 +25,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('massage');
     }
 
     /**
@@ -44,7 +44,7 @@ class ContactController extends Controller
         $new_mssg ->email = $request->email;
         $new_mssg ->message = $request->message;
         $new_mssg->save();
-        return view('contact');
+        return view('home');
 
     }
 
