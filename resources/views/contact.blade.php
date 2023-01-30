@@ -17,7 +17,7 @@
                             <input type="text" name="phone" class="form-control py-2 mb-3" placeholder="Phone Number" required/>
                             <input type="email" name="email" class="form-control py-2 mb-3" placeholder="Email" required/>
                             <textarea type="text" name="message" class="message-box form-control py-2 mb-3" placeholder="Message" required></textarea>
-                            <button type="submit" class="btn btn-primary">SEND</button>
+                            <a type="submit" href="profile" class="btn btn-primary">SEND</a>
                         </form>
                     </div>
                 </div>
