@@ -39,7 +39,7 @@ class ContactController extends Controller
         //
         $new_mssg = new Contact;
         $new_mssg ->Name = $request->name;
-        $new_mssg ->phone = $request->phone;
+        $new_mssg ->phone_number = $request->phone;
         $new_mssg ->email = $request->email;
         $new_mssg ->message = $request->message;
         $new_mssg->save();
