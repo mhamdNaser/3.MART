@@ -19,7 +19,6 @@ class RegisterController extends Controller
     public function index(Request $request)
     {
         return view('login');
-
     }
 
     public function login(Request $request)

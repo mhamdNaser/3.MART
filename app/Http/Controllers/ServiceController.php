@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Service;
-// use App\Service;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -39,19 +38,11 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        // if (!$request->Service_Price){
-        //     $price = $request->Service_Price;
-        // }else {
-        //     $price = 0;
-        // }
-        // if (!$request->Service_Duration){
-        //     $duration = $request->Service_Duration;
-        // }else {
-        //     $duration = 0;
-        // }
-        
+
         $imgname = $request->file('Service_Image')->getClientOriginalName();
         $request->file('Service_Image')->storeAs('public/serviceimage',$imgname);
+        var_dump($request->file('upload_file'));
+
         $serv = new Service();
         $serv->Service_Name = $request->Service_Name;
         $serv->Category_id = $request->Category_id;
@@ -60,8 +51,8 @@ class ServiceController extends Controller
         $serv->Service_Price = $request->Service_Price;
         $serv->Service_Duration = $request->Service_Duration;
         $serv->save();
-        
-       
+
+
         return redirect()->route('Service.index');
     }
     /**
@@ -98,23 +89,26 @@ class ServiceController extends Controller
      */
     public function update(Request $request,$id)
     {
-       
-         
         $service = Service::findOrFail($id);
         $service->Service_Name = $request->Service_Name;
         $service->Category_id  = $request->Category_id;
         $service->Service_Description = $request->Service_Description;
-        $service->Service_Image = $request->Service_Image;
+        // $service->Service_Image = $request->Service_Image;
+        if ($request->hasFile('image')) {
+            $Service_Image = $request->file('image')->getClientOriginalName();
+            $request->file('image')->storeAs('public/userimage',$Service_Image);
+            $service->User_Image = $Service_Image;
+        }
         $service->Service_Price = $request->Service_Price;
         $service->Service_Duration = $request->Service_Duration;
         $service->save();
-        
-     return redirect()->route('Service.index');
 
-          
+     return redirect('Service');
+
+
     }
-    
-    
+
+
 
     /**
      * Remove the specified resource from storage.

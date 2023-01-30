@@ -34,11 +34,16 @@ Route::get('about', function () { return view('about'); });
 Route::get('contact', function () { return view('contact'); });
 // Route::get('service', function () { return view('service'); });
 Route::get('profile', function () { return view('profile'); });
+Route::get('cart', function () { return view('cart'); });
+Route::get('dashboard', function () { return view('index'); });
 
 
 
 Route::resource('categories', CategoryController::class);
 Route::resource('Reservation', ReservationController::class);
+Route::resource('Service', ServiceController::class);
+Route::resource('categories', CategoryController::class);
+Route::resource('user', UserController::class);
 
 
 Route::controller(RegisterController::class)->group(function(){
@@ -49,19 +54,23 @@ Route::controller(RegisterController::class)->group(function(){
     Route::get('logout', 'destroy')->name('logout');
 });
 
+// Route::get('service', function () {
+//     $services = Service::all();
+//     return view('service',["collection"=>$services]);
+// });
 
-Route::get('contact', function () {
-    return view('contact');
-});
+// Route::get('contact', function () {
+//     return view('contact');
+// });
 
 Route::get('service', function () {
     $services = Service::all();
     return view('service',["collection"=>$services]);
 });
 
-Route::get('dashboard', function () {
-    return view('index');
-});
+// Route::get('dashboard', function () {
+//     return view('index');
+// });
 
 
 Route::resource('Service', ServiceController::class);
@@ -69,6 +78,8 @@ Route::resource('Service', ServiceController::class);
 Route::resource('categories', CategoryController::class);
 
 Route::resource('user', UserController::class);
+
+
 
 
 

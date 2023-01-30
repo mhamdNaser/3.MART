@@ -29,7 +29,7 @@ public function index()
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -51,7 +51,7 @@ public function index()
         $category->Category_Image = $category_img;
 
         $category->save();
-        return to_route('categories.index');
+        return redirect('categories');
 
 
 
@@ -63,10 +63,9 @@ public function index()
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show()
     {
-        $categorys = Category::find($category);
-        return view('category')->with('category', $categorys);
+        //
     }
 
     /**
@@ -87,11 +86,11 @@ public function index()
             'Category_Name' => 'required|string|max:255',
             'Category_Description' => 'required|string'
         ]);
-    
+
         $category = Category::findOrFail($id);
         $category->Category_Name = $validatedData['Category_Name'];
         $category->Category_Description = $validatedData['Category_Description'];
-    
+
         if ($request->hasFile('Category_Image')) {
             $file = $request->file('Category_Image');
             $validator = Validator::make(['Category_Image' => $file], [
@@ -100,7 +99,7 @@ public function index()
             if ($validator->fails()) {
                 return back()->withErrors($validator);
             }
-        
+
             $filename = time() . '.' . $file->getClientOriginalExtension();
             $location = storage_path('app/public/categoryImg');
             $file->move($location, $filename);
@@ -108,11 +107,12 @@ public function index()
             Storage::delete($oldImage);
             $category->Category_Image = $filename;
         }
-    
+
         $category->save();
+        return redirect('categories');
         return back()->with('success', 'Category updated successfully');
     }
-    
+
 
 
 

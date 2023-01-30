@@ -42,7 +42,7 @@ class ReservationController extends Controller
             $res_to_send['Status']= $res->Status;
             $res_to_send['Reject_Reason']= $res->Reject_Reason;
             array_push($result,$res_to_send);
-        } 
+        }
         return view('admin.reservation.showreservation',['Reservations'=>$result]);
     }
 
@@ -141,8 +141,10 @@ class ReservationController extends Controller
      * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
+
     
     public function edit(Reservation $reservation,$str)
+
     {
         //
         $pattern = "/[ ]/";
