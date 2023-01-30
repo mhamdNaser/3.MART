@@ -11,63 +11,97 @@
             <button class="btn btn-primary" type="button">Search</button>
         </form>
     </div>
-</div>
-<div class="container py-5">
-    <div class="row justify-content-center">
+  </div>
+<section class="service_section layout_padding">
+    <div class="container ">
+      <div class="heading_container heading_center">
+        <h2> Our Services </h2>
+      </div>
+      <div class="row">
+        {{-- ///////////////////////////// --}}
+
         @foreach ($collection as $item)
-        <div class="col-lg-4 justify-content-center mb-3">
-            <div class="col-md-12 col-xl-12">
-                <div class="card shadow-0 border rounded-3">
-                    <div class="card-body">
-                        <div class="row justify-content-center align-items-center">
-                            <img class="p-4" style="height: 220px; width: 320px" src="{{URL::asset("storage/serviceimage/$item->Service_Image")}}" />
-                            <a href="#!">
-                            <div class="justify-content-center text-dark px-3">
-                                <h5>{{$item->Service_Name}}</h5>
-                                <div class="d-flex flex-row">
-                                    <div class="text-danger mb-1 me-2">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    </div>
-                                    <span></span>
-                                </div>
-                                <p class="text-dark mb-4 mb-md-0">
-                                    {{$item->Service_Description}}
-                                </p>
-                            </div>
-                            </a>
-                            <div class="row border-sm-start-none">
-                                <div class="d-flex flex-row align-items-center">
-                                    <h4 class="mb-1 me-1">{{$item->Service_Price}} JD</h4>
-                                </div>
-                                <h6 class="text-success">{{$item->Service_Duration}} Hours</h6>
-                                <div class="d-flex flex-column mt-1">
-                                        @if (Route::has('login'))
-                                        @auth
-                                        <a class="btn btn-primary btn-sm" href="{{route('Reservation.show',$item->id)}}">Book Now</a>
-                                        @else
-                                        <a class="btn btn-primary btn-sm" href="{{route('Reservation.show',$item->id)}}">
-                                        Book Now
-                                        </a>
-                                        @endif
-                                        @endif
-                                    {{-- <button class="btn btn-outline-primary btn-sm mt-2" type="button">
-                                    Add to wishlist
-                                    </button> --}}
-                                </div>
-                            </div>
-                        </div>
+        <div class="col-sm-6 col-md-4 mx-auto">
+          <div class="box" style="min-height: 30em">
+            <div class="img-box">
+              <img src="{{URL::asset("storage/serviceimage/$item->Service_Image")}}" alt="" />
+            </div>
+            <div class="detail-box">
+              <h5>
+                {{$item->Service_Name}}
+              </h5>
+              <h6>
+                Service Price : {{$item->Service_Price}} JD
+              </h6>
+              <h6>
+                Service Duration : {{$item->Service_Duration}} Hours
+              </h6>
+              <p>
+                {{$item->Service_Description}}
+              </p>
+            </div>
+            <div class="btn-box" >
+              {{-- create ---------edit --}}
+              @if (Route::has('login'))
+              @auth
+              <a href="{{route('Reservation.show',$item->id)}}">
+                Book Now
+              </a>
+              @else
+              <a href="/login">
+                Book Now
+              </a>
+              @endif
+              @endif
+            </div>
+          </div>
+        </div>
+        @endforeach
+{{-- /////////////////////////////////////////////////// --}}
+    </div>
+  </div>
+</section>
+@endsection
+{{-- <section style="background-color: #eee;">
+    <div class="text-center container py-5">
+        <h4 class="mt-4 mb-5"><strong>Bestsellers</strong></h4>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+                <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                data-mdb-ripple-color="light">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(17).webp"
+                    class="w-100" />
+                <a href="#!">
+                    <div class="mask">
+                    <div class="d-flex justify-content-start align-items-end h-100"></div>
                     </div>
+                    <div class="hover-overlay">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </div>
+                </a>
                 </div>
+                <div class="card-body">
+                <a href="" class="text-reset">
+                    <h5 class="card-title mb-3">Product name</h5>
+                </a>
+                <a href="" class="text-reset">
+                    <p>Category</p>
+                </a>
+                <h6 class="mb-3">$61.99</h6>
+                </div>
+            </div>
             </div>
         </div>
         @endforeach
     </div>
+<<<<<<< HEAD
 </div>
 @endsection
 
 
 
+=======
+  </section> --}}
+>>>>>>> 9063b4dbd2c4fab530b776d026da6de1c9d5c3f6
 
