@@ -4,7 +4,11 @@
 
 @section('title', 'Contact')
 @section('content')
-
+<style>
+  .invalid-feedback{
+    display: block;
+  }
+  </style>
   <section class="contact_section layout_padding">
     <div class="container">
       <div class="heading_container">
@@ -14,12 +18,16 @@
       </div>
       <div class="row">
         <div class="col-md-8">
-          <form action="">
+          <form method="post" action="{{route("contact.store")}}">
+             @csrf 
             <div>
-              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Name" style="color: black"/>
+              {{-- @if ($errors->has('name'))
+              <small class="form-text invalid-feedback">{{$errors->first('name')}}</small>
+              @endif --}}
             </div>
             <div>
-              <input type="text" placeholder="Phone Number" />
+              <input type="text" placeholder="Phone Number" style="color: black"/>
             </div>
             <div>
               <input type="email" placeholder="Email" />
@@ -28,9 +36,7 @@
               <input type="text" class="message-box" placeholder="Message" />
             </div>
             <div class="d-flex ">
-              <button >
-                SEND
-              </button>
+              <button type="submit">SEND</button>
             </div>
           </form>
         </div>

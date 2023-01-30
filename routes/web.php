@@ -4,6 +4,7 @@ use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\ContactController;
 use App\Models\Service;
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,7 @@ use App\Http\Controllers\RegisterController;
 Route::get('/', function () { return view('home'); });
 Route::get('index', function () { return view('index'); });
 Route::get('about', function () { return view('about'); });
-Route::get('contact', function () { return view('contact'); });
+// Route::get('contact', function () { return view('contact'); });
 Route::get('service', function () { return view('service'); });
 Route::get('profile', function () { return view('profile'); });
 Route::get('cart', function () { return view('cart'); });
@@ -69,9 +70,8 @@ Route::resource('Service', ServiceController::class);
 Route::resource('categories', CategoryController::class);
 
 Route::resource('user', UserController::class);
+Route::resource('contact', ContactController::class);
 
 // Route::get('servicebook', function () {
 //     return view('makereservation');
 // });
-
-
