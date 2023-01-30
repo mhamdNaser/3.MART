@@ -26,8 +26,7 @@
                                     @endauth
                                 </a>
                                 <ul class="dropdown-menu text-center">
-                                    <li><a class="dropdown-item" href="/profile">Profile</a></li>
-                                    <li><a class="dropdown-item" href="/index">Dashboard</li>
+                                    <li><a class="dropdown-item" href="/index">Dashboard</a></li>
                                     <hr class="dropdown-divider">
                                     <li><a class="dropdown-item" href="logout">Log Out</a></li>
                                 </ul>
