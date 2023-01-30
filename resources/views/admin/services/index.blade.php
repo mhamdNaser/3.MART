@@ -24,7 +24,7 @@
                                 service_name
                             </th>
                             <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                Category Id
+                                Category
                             </th>
                             <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                 Service Description
