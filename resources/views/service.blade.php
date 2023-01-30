@@ -39,7 +39,7 @@
                 Book Now
               </a>                   
               @else  
-              <a href="{{route('Reservation.show',$item->id)}}">
+              <a href="/login">
                 Book Now
               </a>
               @endif
