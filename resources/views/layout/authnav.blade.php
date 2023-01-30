@@ -18,7 +18,7 @@
             <ul class="navbar-nav d-lg-flex text-center">
                 @if (Route::has('login'))
                     @auth
-                        @if (Auth::user()->Role === 'ADM' || Auth::user()->Role === 'SVP')
+                        @if (Auth::user()->Role === 'admin')
                             <li class="nav-item dropdown-center">
                                 <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     @auth
