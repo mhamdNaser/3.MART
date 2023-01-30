@@ -31,15 +31,16 @@ class ReservationController extends Controller
             $user=User::findorfail($res->User_Id );
             $res_to_send['User'] = $user->name;
             $res_to_send['location']= $res->City."/".$res->Street_Name."/".$res->Building_Number;
-            if (!$res->End_Time){
-                $res->End_Time = "not yet determined";
-            }
+            // if (!$res->End_Time){
+            //     $res->End_Time = "not yet determined";
+            // }
             $res_to_send['Time']= $res->Start_Time." To ".$res->End_Time;
-            if (!$res->Total_Price){
-                $res->Total_Price = "not yet determined";
-            }
+            // if (!$res->Total_Price){
+            //     $res->Total_Price = "not yet determined";
+            // }
             $res_to_send['Total_Price']= $res->Total_Price;
             $res_to_send['Status']= $res->Status;
+            $res_to_send['Reject_Reason']= $res->Reject_Reason;
             array_push($result,$res_to_send);
         }
         return view('admin.reservation.showreservation',['Reservations'=>$result]);
@@ -72,8 +73,7 @@ class ReservationController extends Controller
         $new_res["End_Time"]= $request_date->addHours($service->Service_Duration);
         $new_res["Total_Price"]= ($service->Service_Price);
         $new_res["Service_Id"]= ($request->serviceid);
-        $new_res["User_Id"]= 1;
-        // $new_res["User_Id"]= Auth::user()->id;
+        $new_res["User_Id"]= Auth::user()->id;
         // i will convert the date for number of seconds
         // start time in sec
         $date = $request->Start_Time;
@@ -142,14 +142,19 @@ class ReservationController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function edit(Reservation $reservation,$id)
+    
+    public function edit(Reservation $reservation,$str)
+
     {
         //
+        $pattern = "/[ ]/";
+        $components = preg_split($pattern, $str);
+        // dd($components);    
         // return view('makereservation');
-        $res = Reservation::findorFail($id);
-        $res->Status = "Confirmed";
+        $res = Reservation::findorFail($components[0]);
+        $res->Status = $components[1];
         $res->save();
-        return  to_route('Reservation.index')->with('success','Reservation has confirmed') ;
+        return  to_route('Reservation.index') ;
     }
 
     /**
@@ -162,6 +167,7 @@ class ReservationController extends Controller
     public function update(Request $request)
     {
         //
+        dd("good");
     }
 
     /**
@@ -170,11 +176,16 @@ class ReservationController extends Controller
      * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
         //
-        Reservation::findorfail($id)->delete();
-        return  to_route('Reservation.index')->with('danger','Reservation has Removed') ;
+        $res = Reservation::findorFail($request->id);
+        $res->Status = "Rejected";
+        $res->Reject_Reason = $request->resone;
+        $res->save();
+        return  to_route('Reservation.index') ;
+        // Reservation::findorfail($id)->delete();
+        // return  to_route('Reservation.index')->with('danger','Reservation has Removed') ;
     }
     // public function cancel($id)
     // {

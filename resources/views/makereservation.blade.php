@@ -9,19 +9,19 @@
         <span class="font-medium">
             @if (session()->has('danger'))
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>Error</strong>{{ session()->get('danger') }}!
+                    <strong>Massege :</strong>{{ session()->get('danger') }}!
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
             @if (session()->has('success'))
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>Error</strong>{{ session()->get('success') }}!
+                        <strong>Massege :</strong>{{ session()->get('success') }}!
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
             @endif
             @if (session()->has('warning'))
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>Error</strong>{{ session()->get('warning') }}!
+                    <strong>Massege :</strong>{{ session()->get('warning') }}!
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
