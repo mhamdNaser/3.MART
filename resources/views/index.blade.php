@@ -34,10 +34,6 @@
                                 <h5 class="h5 card-title d-inline">Phone :</h5>
                                 <p class="h6 text-dark d-inline">{{ Auth::user()->Phone }}</p>
                             </div>
-                            <div class="py-1">
-                                <h5 class="h5 card-title d-inline">UserType :</h5>
-                                <p class="h6 text-dark d-inline">{{ Auth::user()->Role }}</p>
-                            </div>
                             <div class="py-1 text-center">
                                 <hr/>
                                 <h5 class="h5 card-title d-inline">Create At</h5><br>
@@ -51,34 +47,32 @@
                 <div class="card">
                     <div class="container">
                         <div class="row p-3">
-                            <h3 class="text-center fw-bolder fs-1 py-3">Chart</h3>
+                            <h3 class="text-center fw-bolder fs-1 py-3 text-primary">Chart</h3>
                             <hr>
                             <div class="col-md-4 col-xl-6">
                                 <div class="card bg-c-blue order-card">
                                     <div class="card-block">
                                         <h6 class="m-b-20">All Users</h6>
-                                        <h2 class="text-right py-2"><i class="fa fa-user-circle-o f-left"></i><span>{{DB::table("users")->count();}}</span></h2>
+                                        <h2 class="text-right py-2"><i class="fa fa-users f-left"></i><span>{{DB::table("users")->count();}}</span></h2>
                                         <p class="m-b-0">3MART Customer<span class="f-right">{{DB::table("users")->count();}}</span></p>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-md-4 col-xl-6">
                                 <div class="card bg-c-green order-card">
                                     <div class="card-block">
                                         <h6 class="m-b-20">All Services</h6>
-                                        <h2 class="text-right py-2"><i class="fa fa-user-circle-o f-left"></i><span>{{DB::table("services")->count();}}</span></h2>
+                                        <h2 class="text-right py-2"><i class="fa fa-gears f-left"></i><span>{{DB::table("services")->count();}}</span></h2>
                                         <p class="m-b-0">3MART Services<span class="f-right">{{DB::table("services")->count();}}</span></p>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-md-4 col-xl-6">
                                 <div class="card bg-c-yellow order-card">
                                     <div class="card-block">
-                                        <h6 class="m-b-20">Orders Received</h6>
-                                        <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>486</span></h2>
-                                        <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                                        <h6 class="m-b-20">All Category</h6>
+                                        <h2 class="text-right py-2"><i class="fa fa-th-large f-left"></i><span>{{DB::table("categories")->count();}}</span></h2>
+                                        <p class="m-b-0">Service Category<span class="f-right">{{DB::table("categories")->count();}}</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -86,15 +80,15 @@
                             <div class="col-md-4 col-xl-6">
                                 <div class="card bg-c-pink order-card">
                                     <div class="card-block">
-                                        <h6 class="m-b-20">Orders Received</h6>
-                                        <h2 class="text-right"><i class="fa fa-credit-card f-left"></i><span>486</span></h2>
-                                        <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                                        <h6 class="m-b-20">All Reservation</h6>
+                                        <h2 class="text-right py-2"><i class="fa fa-opencart f-left"></i><span>{{DB::table("reservations")->count();}}</span></h2>
+                                        <p class="m-b-0">Completed Orders<span class="f-right">{{DB::table("reservations")->count();}}</span></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                </div>
             </div>
         </div>
         @endauth

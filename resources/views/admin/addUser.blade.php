@@ -12,7 +12,8 @@
                 @csrf
 
                 <label>Status</label>
-                <select name="role" id=""   class="form-control py-2 mb-3">
+                <select name="Role" id="Role"   class="form-control py-2 mb-3">
+                    <option value="user" disabled>USER TYPE</option>
                     <option value="user">User</option>
                     <option value="Admin">admin</option>
                 </select>

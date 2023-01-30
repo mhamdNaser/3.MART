@@ -54,12 +54,12 @@
                         <a class="nav-link text-dark" href="/register" title="register">Register<i class="fa fa-cogs ms-2"></i></a>
                     </li>
                     @endif
-                    <li class="nav-item me-2">
+                    {{-- <li class="nav-item me-2">
                     <a href="/cart" class="nav-link text-dark" title="cart">
                         <i class="fa fa-opencart ms-2"></i>
                         <span id="" class="badge rounded-pill mypimarybg cartelement text-dark" alt="Notifications" style="font-size: 0.6rem; margin-left : -10px">2</span>
                     </a>
-                    </li>
+                    </li> --}}
                 @endif
             </ul>
         </nav>
