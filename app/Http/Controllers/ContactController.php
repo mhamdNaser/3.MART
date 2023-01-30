@@ -36,9 +36,6 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
-        // Contact::create($new_mssg);
-=======
         //
         $new_mssg = new Contact;
         $new_mssg ->Name = $request->name;
@@ -48,7 +45,6 @@ class ContactController extends Controller
         $new_mssg->save();
         return view('contact');
 
->>>>>>> 9063b4dbd2c4fab530b776d026da6de1c9d5c3f6
     }
 
     /**

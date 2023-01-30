@@ -21,22 +21,23 @@
         {{-- ///////////////////////////// --}}
 
         @foreach ($collection as $item)
-        <div class="col-sm-6 col-md-4 mx-auto">
-          <div class="box" style="min-height: 30em">
+        <div class="col-sm-6 col-md-4 mx-auto" >
+          <div class="box">
             <div class="img-box">
-              <img src="{{URL::asset("storage/serviceimage/$item->Service_Image")}}" alt="" />
+              <img src="{{URL::asset("storage/serviceimage/$item->Service_Image")}}" alt=""/>
             </div>
-            <div class="detail-box">
+            <div class="detail-box" style="min-height: 14em">
               <h5>
                 {{$item->Service_Name}}
               </h5>
               <h6>
-                Service Price : {{$item->Service_Price}} JD
+                Service Price : <span class="text-primary fw-bolder">{{$item->Service_Price}} JD</span>
               </h6>
               <h6>
-                Service Duration : {{$item->Service_Duration}} Hours
+                Service Duration : <span class="text-success fw-bolder">{{$item->Service_Duration}} Hours</span>
               </h6>
-              <p>
+              <hr>
+              <p style="font-size: 14px">
                 {{$item->Service_Description}}
               </p>
             </div>
@@ -95,13 +96,5 @@
         </div>
         @endforeach
     </div>
-<<<<<<< HEAD
-</div>
-@endsection
-
-
-
-=======
   </section> --}}
->>>>>>> 9063b4dbd2c4fab530b776d026da6de1c9d5c3f6
 
