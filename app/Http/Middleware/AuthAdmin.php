@@ -18,7 +18,7 @@ class AuthAdmin
      */
 
      public function handle(Request $request){
-        if(Auth::user()->Role === 'ADM'){
+        if(Auth::user()->Role === 'adnin'){
             return ($request);
         }
         return redirect('login');

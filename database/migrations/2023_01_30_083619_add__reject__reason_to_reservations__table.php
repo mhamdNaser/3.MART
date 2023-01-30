@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('contacts', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->strig("Name");
-            $table->string("phone_number");
-            $table->strig("email");
-            $table->strig("message");
+        Schema::table('reservations', function (Blueprint $table) {
+            //
+            $table->string('Reject_Reason');
         });
     }
 
@@ -30,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contacts');
+        Schema::table('reservations', function (Blueprint $table) {
+            //
+            $table->dropColumn('Reject_Reason');
+        });
     }
 };

@@ -26,9 +26,6 @@
 </head>
 <body>
 
-
-
-
 <div class="wrapper">
     <nav id="sidebar" class="sidebar js-sidebar">
         <div class="sidebar-content js-simplebar">
@@ -42,9 +39,9 @@
                 <h4 class="text-light text-center">{{ strtoupper(Auth::user()->name) }}</h4>
             </div>
             <ul class="sidebar-nav text-center">
-                <li class="sidebar-item @yield('Dashboard_active')">
-                    <a class="sidebar-link" href="/">
-                        Back To Site View
+                <li class="sidebar-item @yield('Dash_active')">
+                    <a class="sidebar-link" href="index">
+                        <span class="align-middle">Dashboard</span>
                     </a>
                 </li>
                 <li class="sidebar-item @yield('user_active')">
@@ -68,10 +65,12 @@
                     </a>
                 </li>
             </ul>
-            <div class="mt-5">
+            <div class="mt-5 pt-1">
                 <div class="sidebar-nav text-center mt-5">
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="/profile">Profile</a>
+                    <li class="sidebar-item @yield('Dashboard_active')">
+                        <a class="sidebar-link" href="/">
+                            Back To Site View
+                        </a>
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="logout">Log Out</a>

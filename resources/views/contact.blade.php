@@ -1,48 +1,29 @@
 @extends('layout.master')
-
 @section('ContactUs_active', 'active')
-
 @section('title', 'Contact')
-@section('content')
-<style>
-  .invalid-feedback{
-    display: block;
-  }
-  </style>
-  <section class="contact_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Contact Us
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-md-8">
-          <form method="post" action="{{route("contact.store")}}">
-             @csrf 
-            <div>
-              <input type="text" placeholder="Name" style="color: black"/>
-              {{-- @if ($errors->has('name'))
-              <small class="form-text invalid-feedback">{{$errors->first('name')}}</small>
-              @endif --}}
-            </div>
-            <div>
-              <input type="text" placeholder="Phone Number" style="color: black"/>
-            </div>
-            <div>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div>
-              <input type="text" class="message-box" placeholder="Message" />
-            </div>
-            <div class="d-flex ">
-              <button type="submit">SEND</button>
-            </div>
-          </form>
-        </div>
 
+@section('content')
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-lg-8 my-5 pb-3">
+            <div class="me-3 shadow-lg border-top border-4 border-primary rounded-2">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-10 py-3">
+                        <form class="form-group mx-sm-3 mb-2" action="{{route(contact.store)}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <h3 class="ms-3">Contact Us</h3>
+                            <hr>
+                            <input type="text" class="form-control py-2 mb-3" placeholder="Name" required/>
+                            <input type="text" class="form-control py-2 mb-3" placeholder="Phone Number" required/>
+                            <input type="email" class="form-control py-2 mb-3" placeholder="Email" required/>
+                            <textarea type="text" class="message-box form-control py-2 mb-3" placeholder="Message" required></textarea>
+                            <button type="submit" class="btn btn-primary">SEND</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
-  @endsection
+</div>
+@endsection
+

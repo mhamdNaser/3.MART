@@ -1,11 +1,22 @@
-
+<script>
+    function apper(id){
+        // console.log("good");
+        var ele_id = id;
+        if (document.getElementById(ele_id).style.display === "initial"){
+            document.getElementById(ele_id).style.display = "none";
+        }else {
+            document.getElementById(ele_id).style.display = "initial";
+        }
+    }
+</script>
 @extends('layout.navbar')
 @section('title', 'Reservations')
 @section('Reservation_active', 'active')
 
-@section('button')
+
+{{-- @section('button')
     <a href="{{route('Reservation.create')}}"><button type="button" class="btn btn-dark" >Add New Reservation</button></a>
-@endsection
+@endsection --}}
 
 @section('container')
 
@@ -34,7 +45,7 @@
 <div class="container-fluid py-4">
     <div class="row">
         <div class="col-12">
-            <div class="card my-4">
+            <div class="card my-4 border-top border-4 border-primary">
                 <h3 class="p-3 text-capitalize text-dark text-center fw-bold">Reservation Table</h3>
                 <table class="table align-items-center mb-0 shadow-lg">
                     <thead>
@@ -58,6 +69,9 @@
                                 Status
                             </th>
                             <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                Reject_Reason
+                            </th>
+                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                 Action
                             </th>
                         </tr>
@@ -71,21 +85,44 @@
                             <td class="align-middle text-center">{{$item["Time"]}}</td>
                             <td class="align-middle text-center">{{$item["Total_Price"]}}</td>
                             <td class="align-middle text-center">{{$item["Status"]}}</td>
+                            <td class="align-middle text-center">{{$item["Reject_Reason"]}}</td>
                             <td class="align-middle text-center">
-                                <div class="d-flex">
-                                    <div class="p-1  border border-0">
+                                {{-- <div class="d-flex"> --}}
+                                    {{-- <div class="p-1  border border-0">
                                         <form action="{{route('Reservation.destroy',$item["id"])}}" method="post">
                                             @csrf
                                             @method('DELETE')
+                                            <tr>
+                                            <td colspan="4">
+                                            <input type="text" name="City" id="Category_Name" class="form-control">
+                                            </td>
+                                            </tr>
                                             <button class="btn btn-danger" type="submit">Delete</button>
                                         </form>
-                                    </div>
+                                    </div> --}}
                                     <div class="p-1  border border-0">
-                                        <a href="{{route('Reservation.edit',$item["id"])}}"><button class="btn btn-primary">Confirm</button></a>
+                                        <a href="{{route('Reservation.edit',$item["id"]." Confirmed")}}"><button class="btn btn-primary">Confirm</button></a>
                                     </div>
-                                </div>
+                                    <div class="p-1  border border-0" >
+                                        <button class="btn btn-danger" onclick="apper({{$item['id']}})"> Reject </button>
+                                    </div>
+                                {{-- </div> --}}
                             </td>
                         </tr>
+                        <tr id="{{$item["id"]}}" style="display: none">
+                        <form action="{{route('Reservation.destroy',$item['id'])}}" method="post">
+                            @csrf
+                            @method('DELETE')
+
+                            <td colspan="4">
+                            <input type="text" name="resone" id="Category_Name" class="form-control" style="width: 200px" placeholder="Reasons for refusal">
+                            </td>
+                            <td>
+                            <input type="hidden" name="id" id="Category_Name" class="form-control" value="{{$item['id']}}">
+                            <button class="btn btn-danger" type="submit">Reject</button>
+                            </td>
+                        </tr>
+                        </form>
                         @endforeach
                     </tbody>
                 </table>

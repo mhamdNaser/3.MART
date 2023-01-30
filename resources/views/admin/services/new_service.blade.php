@@ -1,48 +1,37 @@
 
 @extends('layout.navbar')
-@section('title')
-Services
-@endsection
-@section('service_active')
-active
-@endsection
+@section('title', 'Services')
+@section('service_active', 'active')
+
 @section('container')
-
-          <form action="{{route('Service.store')}}" method="post" enctype="multipart/form-data">
-            @csrf
-            <div class="card m-2 col-9">
-              <div class="card-body">
-                <input type="text" class="form-control" placeholder="Service Name" name="Service_Name">
-              </div>
-              <div class="card-body">
-              <select name="Category_id" id=""  class="form-control">
-                <option value="">choose category for service</option>  
-                @foreach ($categories as $item)
-                <option value="{{$item->id}}">{{$item->Category_Name}}</option>    
-                @endforeach
-              </select>
-            </div>
-              <div class="card-body">
-                <textarea class="form-control"  placeholder="Description" name="Service_Description"></textarea>
-              </div>
-              <div class="card-body">
-                <input type="file" class="form-control" placeholder="Input" name="Service_Image">
-              </div>
-              <div class="card-body">
-                <input type="number" class="form-control" placeholder="Service Price" name="Service_Price" min="1">
-              </div>
-              <div class="card-body">
-                <input type="number" class="form-control" placeholder="Service Duration in hours" name="Service_Duration" min="1">
-              </div>
-              <button type="submit" class="btn btn-success">save</button>
-            </div>
-          </div>
-        </form>
-
-        @endsection
+<div class="card m-3 col shadow-lg border-top border-4 border-primary">
+    <div class="card-body row justify-content-center align-items-center">
+        <h1>Add New Service</h1>
+        <hr>
+        <div class="col-lg-10 py-3">
+            <form action="{{route('Service.store')}}" method="post" enctype="multipart/form-data" class="form-group mx-sm-3 mb-2">
+                <h1>Add New Service</h1>
+                @csrf
+                <input type="text"  class="form-control py-2 mb-3" placeholder="Service Name" name="Service_Name"></br>
+                <select name="Category_id" id=""   class="form-control py-2 mb-3">
+                    <option value="">choose category for service</option>
+                    @foreach ($categories as $item)
+                    <option value="{{$item->id}}">{{$item->Category_Name}}</option>
+                    @endforeach
+                </select>
+                <textarea  class="form-control py-2 mb-3"  placeholder="Description" name="Service_Description"></textarea>
+                <input type="file"  class="form-control py-2 mb-3" placeholder="Input" name="Service_Image">
+                <input type="number"  class="form-control py-2 mb-3" placeholder="Service Price" name="Service_Price" min="1">
+                <input type="number"  class="form-control py-2 mb-3" placeholder="Service Duration in hours" name="Service_Duration" min="1">
+                <button type="submit" class="btn btn-primary">save</button>
+            </form>
+        </div>
+    </div>
+</div>
+@endsection
 
 
-          
+
 
 
 
@@ -62,7 +51,7 @@ active
 
 
             <script src="../../../assets/js/app.js"></script>
-    
+
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
                     var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
