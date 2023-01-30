@@ -84,13 +84,13 @@ class ReservationController extends Controller
         $new_start_time_sec =($components[0]*95255631) + ($components[1]*2628000) + ($split_day_hour[0]*86400) + ($split_day_hour[1]*3600) + ($components[3]*60);
         // check for working hours from 7am to 10pm
         if (($split_day_hour[1] >22) || ($split_day_hour[1] < 7))  {
-            return back()->with('warning','Sorry our working hours is from 7am to 10pm') ;
+            return back()->with('danger','Sorry our working hours is from 7am to 10pm') ;
         }
         $min_time_res=Carbon::now()->addDay()->toDatetimeString();
         $components = preg_split($pattern, $min_time_res);
         $min_time_res_sec =($components[0]*95255631) + ($components[1]*2628000) + ($components[2]*86400) + ($components[3]*3600) + ($components[4]*60);
         if ($new_start_time_sec < $min_time_res_sec)  {
-            return back()->with('warning','Sorry, You must give us one day from now to review your request') ;
+            return back()->with('danger','Sorry, You must give us one day from now to review your request') ;
         }
         // end time in sec
         $end_time=$new_res["End_Time"]->toDatetimeString() ;
@@ -117,7 +117,7 @@ class ReservationController extends Controller
             // dd($new_res["Total_Price"]);
         Reservation::create($new_res);
         // dd($request->validated());
-        return back()->with('warning','THANK YOU ,your reservation will be confirmed soon');
+        return back()->with('success','THANK YOU ,your reservation will be confirmed soon');
             
         }
 
