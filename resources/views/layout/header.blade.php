@@ -46,14 +46,14 @@
                 <li class="nav-item @yield('home_active')">
                     <a class="nav-link pb-3" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item @yield('About_active')">
-                    <a class="nav-link pb-3" href="/about" > About</a>
-                </li>
                 <li class="nav-item @yield('Services_active')">
                     <a class="nav-link pb-3" href="/service">Services</a>
                 </li>
+                <li class="nav-item @yield('About_active')">
+                    <a class="nav-link pb-3" href="/about" > About</a>
+                </li>
                 <li class="nav-item @yield('ContactUs_active')">
-                    <a class="nav-link pb-3" href="{{route('contact.store')}}">Contact Us</a>
+                    <a class="nav-link pb-3" href="{{route('contact.create')}}">Contact Us</a>
                 </li>
                 </ul>
             </div>

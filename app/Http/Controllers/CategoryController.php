@@ -76,7 +76,10 @@ public function index()
      */
     public function edit($id)
     {
-        $category = Category::findOrFail($id);
+        $category = Category::find($id);
+        if (! $category) {
+            return redirect('index');
+        }
         return view('admin.categories.editcategories', compact('category'));
     }
 

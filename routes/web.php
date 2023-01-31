@@ -53,7 +53,7 @@ Route::controller(RegisterController::class)->group(function(){
     Route::post('register', 'store')->name('register');
     Route::get('login', 'index')->name('login');
     Route::post('login', 'login')->name('go.login');
-    Route::get('logout', 'destroy')->name('logout');
+    Route::get('logout', 'destroy')->name('go.logout');
 });
 
 // Route::get('service', function () {

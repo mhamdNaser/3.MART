@@ -20,25 +20,25 @@
                 <table class="table align-items-center mb-0 shadow-lg">
                     <thead>
                         <tr>
-                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                 service_name
                             </th>
-                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                 Category
                             </th>
-                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                 Service Description
                             </th>
-                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                 Service_Image
                             </th>
-                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                 Service_Price
                             </th>
-                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                 Service_Duration
                             </th>
-                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                            <th scope="row" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                 Action
                             </th>
                         </tr>
