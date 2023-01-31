@@ -21,14 +21,18 @@ class ReservationController extends Controller
     public function index()
     {
         //
+
         $Reservations = Reservation::get();
         $result = [];
         foreach ($Reservations as $res){
+            
             $res_to_send = [];
             $res_to_send["id"] = $res->id;
             $service=Service::findorfail($res->Service_Id);
             $res_to_send['Service'] = $service->Service_Name;
-            $user=User::findorfail($res->User_Id );
+            $user=User::findOrFail($res->User_Id);
+            // $user=User::get();
+            // dd($user);
             $res_to_send['User'] = $user->name;
             $res_to_send['location']= $res->City."/".$res->Street_Name."/".$res->Building_Number;
             // if (!$res->End_Time){
@@ -43,7 +47,7 @@ class ReservationController extends Controller
             $res_to_send['Reject_Reason']= $res->Reject_Reason;
             array_push($result,$res_to_send);
         }
-        return view('admin.reservation.showreservation',['Reservations'=>$result]);
+        return view("admin.reservation.showreservation",['Reservations'=>$result]);
     }
 
     /**

@@ -8,8 +8,8 @@
     <div class="col-lg-3">
         <form class="d-flex" style="margin-top: -2rem" action="{{ route('search') }}" method="POST">
           @csrf
-            <input class="form-control me-2" type="text" placeholder="Search" name="search">
-            <button class="btn btn-primary" type="submit">Search</button>
+            <input class="form-control me-2" type="text" placeholder="Search">
+            <button class="btn btn-primary" type="button">Search</button>
         </form>
     </div>
   </div>
@@ -21,7 +21,7 @@
       <div class="row">
         {{-- ///////////////////////////// --}}
 
-        @foreach ($collection as $item)
+        @foreach ($results as $item)
         <div class="col-sm-6 col-md-4 mx-auto">
           <div class="box" style="min-height: 30em">
             <div class="img-box">

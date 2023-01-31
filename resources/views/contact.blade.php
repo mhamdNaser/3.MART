@@ -9,7 +9,7 @@
             <div class="me-3 shadow-lg border-top border-4 border-primary rounded-2">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-10 py-3">
-                        <form class="form-group mx-sm-3 mb-2" action="{{route(contact.store)}}" method="POST" enctype="multipart/form-data">
+                        <form class="form-group mx-sm-3 mb-2" action="{{route('contact.store')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <h3 class="ms-3">Contact Us</h3>
                             <hr>

@@ -39,7 +39,7 @@ class ContactController extends Controller
         //
         $new_mssg = [
 
-        ]
+        ];
         // Contact::create($new_mssg);
 
     }

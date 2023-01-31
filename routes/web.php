@@ -18,6 +18,7 @@ use App\Models\Service;
 */
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SearchController;
 use App\Models\Category;
 
 // Route::get('/', function () {
@@ -81,7 +82,7 @@ Route::resource('categories', CategoryController::class);
 Route::resource('user', UserController::class);
 Route::resource('contact', ContactController::class);
 
-
+Route::post('/search' , [SearchController::class , 'search'])->name('search');
 
 
 
