@@ -53,7 +53,7 @@
                     <a class="nav-link pb-3" href="/service">Services</a>
                 </li>
                 <li class="nav-item @yield('ContactUs_active')">
-                    <a class="nav-link pb-3" href="/contact">Contact Us</a>
+                    <a class="nav-link pb-3" href="{{route('contact.store')}}">Contact Us</a>
                 </li>
                 </ul>
             </div>

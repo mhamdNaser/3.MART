@@ -55,10 +55,14 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
+        $user_img = $request->file('image')->getClientOriginalName();
+        $request->file('image')->storeAs('public/userimage',$user_img);
+
         $users = new User();
         $users->name        = $request->name;
         $users->email       = $request->email;
         $users->phone       = $request->phone;
+        $users->User_Image   = $user_img;
         $users->password    = Hash::make($request->password);
         ;
         $users->save();

@@ -24,6 +24,10 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <label >Photo</label>
+                                <input type="file" class="form-control py-2 mb-3" name="image" placeholder="Please Enter Your photo">
+                            </div>
+                            <div class="row">
                                 <div class="col-lg-6">
                                     <label >Password</label>
                                     <input type="password" class="form-control py-2 mb-3" name="password" placeholder="Please Enter Your Password">

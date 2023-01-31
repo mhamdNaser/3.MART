@@ -27,48 +27,48 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($users as $user)
+                        {{-- @foreach ($users as $user) --}}
                         <tr>
                             <td>
                                 <div class="d-flex px-2 py-1">
                                     <div>
-                                        <img src="{{URL::asset("storage/userimage/$user->User_Image")}}"
+                                        <img src=""
                                             class="avatar avatar-sm me-3 border-radius-lg">
                                     </div>
                                     <div class="d-flex flex-column justify-content-center">
-                                        <h6 class="mb-0 text-sm">{{$user->name}}</h6>
-                                        <p class="text-xs text-secondary mb-0">{{$user->email}}
+                                        <h6 class="mb-0 text-sm"></h6>
+                                        <p class="text-xs text-secondary mb-0">
                                         </p>
                                     </div>
                                 </div>
                             </td>
                             <td>
-                                <p class="text-xs font-weight-bold mb-0">{{$user->Role}}</p>
+                                <p class="text-xs font-weight-bold mb-0"></p>
 
                             </td>
 
                             <td class="align-middle text-center">
                                 <span
-                                    class="text-secondary text-xs font-weight-bold">{{$user->Phone}}</span>
+                                    class="text-secondary text-xs font-weight-bold"></span>
                             </td>
 
                             <td class="align-middle text-center">
                                 <div class="d-flex">
                                     <div class="p-1  border border-0">
-                                        <form action="{{route('user.destroy', $user->id)}}" method="POST">
+                                        {{-- <form action="{{route('user.destroy', $user->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger show-alert-delete-box">Delete</button>
-                                        </form>
+                                        </form> --}}
 
                                     </div>
                                     <div class="p-1  border border-0">
-                                        <a href="{{route('user.edit', $user->id)}}"><button type="submit" class="btn btn-primary">Edit</button></a>
+                                        <a href=""><button type="submit" class="btn btn-primary">Edit</button></a>
                                     </div>
                                 </div>
                             </td>
                         </tr>
-                        @endforeach
+                        {{-- @endforeach --}}
                     </tbody>
                 </table>
             </div>
