@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -15,7 +16,8 @@ class ContactController extends Controller
     public function index()
     {
         //
-        return view('contact');
+        $message = Contact::get();
+        return view('massage' , ['messages'=>$message]);
     }
 
     /**
@@ -25,7 +27,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('massage');
+        return view('contact');
     }
 
     /**
@@ -38,13 +40,13 @@ class ContactController extends Controller
     {
         //
         $new_mssg = new Contact;
-        $new_mssg ->Name = $request->name;
-        $new_mssg ->phone_number = $request->phone;
+        $new_mssg ->name = $request->name;
+        $new_mssg ->phone_number = $request->phone_number;
         $new_mssg ->email = $request->email;
         $new_mssg ->message = $request->message;
         $new_mssg->save();
-        return redirect('home');
 
+        return View('contact');
     }
 
     /**
@@ -87,8 +89,13 @@ class ContactController extends Controller
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy($id)
     {
-        //
+        // $message = Contact::find($id);
+        // $message->delete();
+
+        $message = Contact::findOrFail($id);
+        $message->delete();
+        return redirect('contact')->with('success', 'User deleted successfully');
     }
 }

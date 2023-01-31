@@ -77,6 +77,9 @@ class ServiceController extends Controller
     {
         $Category = Category::all();
         $service = Service::find($id);
+        if (! $service) {
+            return redirect('index');
+        }
         return view('admin.services.edit',['service'=> $service ,'Category'=> $Category] );
     }
 

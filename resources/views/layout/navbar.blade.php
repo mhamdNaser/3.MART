@@ -31,9 +31,7 @@
         <div class="sidebar-content js-simplebar">
             <div class="container-fluid text-center p-3">
                 <a class="sidebar-brand" href="#">
-                    @auth
-                        <img src="{{ asset('storage/userimage/'.Auth::user()->User_Image) }}" class="rounded-circle" height="100rem" width="100rem" alt="Auth Image">
-                    @endauth
+                    <img src="{{ asset('storage/userimage/'.Auth::user()->User_Image) }}" class="rounded-circle" height="100rem" width="100rem" alt="Auth Image">
                 </a>
                 <hr class="text-light">
                 <h4 class="text-light text-center">{{ strtoupper(Auth::user()->name) }}</h4>
@@ -50,7 +48,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item @yield('massage_active')">
-                    <a class="sidebar-link" href="{{route('contact.create')}}">
+                    <a class="sidebar-link" href="{{route('contact.index')}}">
                         <span class="align-middle">Massage</span>
                     </a>
                 </li>
@@ -72,19 +70,24 @@
                 </li>
             </ul>
             <div class="mt-4">
-                <div class="sidebar-nav text-center mt-5">
+                <div class="sidebar-nav text-center mt-5 pt-5">
+                    <li class="sidebar-item @yield('Dashboard_active')" style="visibility: hidden;">
+                        <a class="sidebar-link p-5" href="/">
+                            
+                        </a>
+                    </li>
                     <li class="sidebar-item @yield('Dashboard_active')">
                         <a class="sidebar-link" href="/">
                             Back To Site View
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="logout">Log Out</a>
+                        <a class="sidebar-link" href="{{route('go.logout')}}">Log Out</a>
                     </li>
                 </div>
             </div>
             <hr class="text-light">
-            <ul class="sidebar-nav navbar-dark d-flex justify-content-center">
+            <ul class="sidebar-nav navbar-dark d-flex justify-content-center text-light">
                 <li class="sidebar-item">
                     <a class="nav-link ps-3 pe-3 pb-2" href="" ><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 </li>

@@ -82,7 +82,10 @@ class UserController extends Controller
     public function edit($id)
     {
         //
-        $user = User::findOrFail($id);
+        $user = User::find($id);
+        if (! $user) {
+            return redirect('index');
+        }
         return view('admin.updateUser',compact('user'));
     }
 
