@@ -112,7 +112,6 @@ class RegisterController extends Controller
     {
         Session::flush();
         Auth::logout();
-        dd('hello');
         return Redirect('login');
 
     }

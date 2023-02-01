@@ -46,7 +46,7 @@ class ContactController extends Controller
         $new_mssg ->message = $request->message;
         $new_mssg->save();
 
-        return View('contact');
+        return redirect('/');
     }
 
     /**

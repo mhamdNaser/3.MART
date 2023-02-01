@@ -29,9 +29,7 @@
   <div class="hero_area bg-light">
     <!-- header section strats -->
     <header class="header_section sticky-top bg-light">
-        <div class="header_top">
-                @include('layout.authnav')
-        </div>
+        
         <nav class="navbar navbar-dark bg-dark navbar-expand-lg custom_nav-container ps-3 pe-3 pt-2">
             <a class="navbar-brand  pb-2 ms-2" href="/">
                 <span>
@@ -39,7 +37,7 @@
                 </span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class=""> </span>
+                <span class="text-white" style="color: white"> </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
@@ -55,6 +53,7 @@
                 <li class="nav-item @yield('ContactUs_active')">
                     <a class="nav-link pb-3" href="{{route('contact.create')}}">Contact Us</a>
                 </li>
+                @include('layout.authnav')
                 </ul>
             </div>
         </nav>

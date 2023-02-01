@@ -1,8 +1,8 @@
   <!-- info section -->
   <section class="info_section">
-    <div class="justify-content-center align-items-center g-2 mb-4">
-        <div class="navbar navbar-expand navbar-dark">
-            <ul class="navbar-nav flex-grow-1 d-lg-none d-flex text-center">
+    <div class="row">
+        <div class="navbar navbar-expand navbar-dark justify-content-center">
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="" ><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 </li>
