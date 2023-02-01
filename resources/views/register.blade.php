@@ -23,10 +23,8 @@
                                     <input type="email" class="form-control py-2 mb-3" name="email" placeholder="Please Enter Your E-mail">
                                 </div>
                             </div>
-                            <div class="row">
-                                <label >Password</label>
-                                <input type="file" class="form-control py-2 mb-3" name="image" placeholder="Please Enter Your photo">
-                            </div>
+                            <label >Image</label>
+                            <input type="file" class="form-control py-2 mb-3" name="image" placeholder="Please Enter Your photo">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <label >Password</label>

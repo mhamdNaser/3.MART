@@ -52,7 +52,8 @@ Route::controller(RegisterController::class)->group(function(){
     Route::post('register', 'store')->name('register');
     Route::get('login', 'index')->name('login');
     Route::post('login', 'login')->name('go.login');
-    Route::get('logout', 'destroy')->name('go.logout');
+    Route::get('logout', 'destroy')->name('logout');
+    Route::post('logout', 'destroy')->name('logout');
 });
 
 // Route::get('service', function () {
@@ -80,7 +81,6 @@ Route::resource('categories', CategoryController::class);
 
 Route::resource('user', UserController::class);
 Route::resource('contact', ContactController::class);
-
 
 
 

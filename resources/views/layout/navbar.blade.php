@@ -31,7 +31,9 @@
         <div class="sidebar-content js-simplebar">
             <div class="container-fluid text-center p-3">
                 <a class="sidebar-brand" href="#">
-                    <img src="{{ asset('storage/userimage/'.Auth::user()->User_Image) }}" class="rounded-circle" height="100rem" width="100rem" alt="Auth Image">
+                    @auth
+                        <img src="{{ asset('storage/userimage/'.Auth::user()->User_Image) }}" class="rounded-circle" height="100rem" width="100rem" alt="Auth Image">
+                    @endauth
                 </a>
                 <hr class="text-light">
                 <h4 class="text-light text-center">{{ strtoupper(Auth::user()->name) }}</h4>
@@ -82,7 +84,7 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{route('go.logout')}}">Log Out</a>
+                        <a class="sidebar-link" href="{{route('logout')}}">Log Out</a>
                     </li>
                 </div>
             </div>
