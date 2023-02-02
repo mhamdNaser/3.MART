@@ -4,16 +4,16 @@
         <div class="navbar navbar-expand navbar-dark justify-content-center">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="" ><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a class="nav-link" href="https://www.facebook.com/" target="blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="" ><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a class="nav-link" href="https://twitter.com/" target="blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="" ><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                    <a class="nav-link" href="https://www.youtube.com/" target="blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="" ><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a class="nav-link" href="https://www.instagram.com/" target="blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                 </li>
             </ul>
         </div>

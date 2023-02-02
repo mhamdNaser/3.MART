@@ -145,7 +145,7 @@ class ReservationController extends Controller
         $res = Reservation::findorFail($components[0]);
         $res->Status = $components[1];
         $res->save();
-        return  to_route('Reservation.index') ;
+        return  back() ;
     }
 
     /**

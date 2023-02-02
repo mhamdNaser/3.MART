@@ -20,6 +20,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SearchController;
 use App\Models\Category;
+use App\Models\Reservation;
+use Illuminate\Support\Facades\Auth;
 
 // Route::get('/', function () {
 //     return view('index');
@@ -35,7 +37,10 @@ Route::get('index', function () { return view('index'); });
 Route::get('about', function () { return view('about'); });
 // Route::get('contact', function () { return view('contact'); });
 Route::get('service', function () { return view('service'); });
-Route::get('profile', function () { return view('profile'); });
+Route::get('profile', function () {
+    $Reservations = Reservation::Where('User_Id',Auth::user()->id)->get();
+    return view('profile',['res'=>$Reservations]); 
+    });
 Route::get('cart', function () { return view('cart'); });
 Route::get('dashboard', function () { return view('index'); });
 
