@@ -31,7 +31,9 @@
         <div class="sidebar-content js-simplebar">
             <div class="container-fluid text-center p-3">
                 <a class="sidebar-brand" href="#">
-                    <img src="{{ asset('storage/userimage/'.Auth::user()->User_Image) }}" class="rounded-circle" height="100rem" width="100rem" alt="Auth Image">
+                    @auth
+                        <img src="{{ asset('storage/userimage/'.Auth::user()->User_Image) }}" class="rounded-circle" height="100rem" width="100rem" alt="Auth Image">
+                    @endauth
                 </a>
                 <hr class="text-light">
                 <h4 class="text-light text-center">{{ strtoupper(Auth::user()->name) }}</h4>
@@ -39,33 +41,33 @@
             <ul class="sidebar-nav text-center">
                 <li class="sidebar-item @yield('Dash_active')">
                     <a class="sidebar-link" href="index">
-                        <span class="align-middle">Dashboard</span>
+                        <span class="align-middle fs-4">Dashboard</span>
                     </a>
                 </li>
                 <li class="sidebar-item @yield('user_active')">
                     <a class="sidebar-link" href="{{route('user.index')}}">
-                        <span class="align-middle">User</span>
+                        <span class="align-middle fs-4">User</span>
                     </a>
                 </li>
                 <li class="sidebar-item @yield('massage_active')">
-                    <a class="sidebar-link" href="{{route('contact.index')}}">
-                        <span class="align-middle">Massage</span>
+                    <a class="sidebar-link" href="{{route('contact.store')}}">
+                        <span class="align-middle fs-4">Massage</span>
                     </a>
                 </li>
                 <hr class="text-light py-2" style="width: 50%; margin: 0 auto">
                 <li class="sidebar-item @yield('service_active') ">
                     <a class="sidebar-link" href="{{route('Service.index')}}">
-                        <span class="align-middle">service</span>
+                        <span class="align-middle fs-4">service</span>
                     </a>
                 </li>
                 <li class="sidebar-item @yield('categories_active')">
                     <a class="sidebar-link" href="{{route('categories.index')}}">
-                        <span class="align-middle">category</span>
+                        <span class="align-middle fs-4">category</span>
                     </a>
                 </li>
                 <li class="sidebar-item @yield('Reservation_active') ">
                     <a class="sidebar-link" href="{{route('Reservation.index')}}">
-                        <span class="align-middle">reservation</span>
+                        <span class="align-middle fs-4">reservation</span>
                     </a>
                 </li>
             </ul>
@@ -77,12 +79,12 @@
                         </a>
                     </li>
                     <li class="sidebar-item @yield('Dashboard_active')">
-                        <a class="sidebar-link" href="/">
+                        <a class="sidebar-link fs-4" href="/">
                             Back To Site View
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="{{route('go.logout')}}">Log Out</a>
+                        <a class="sidebar-link fs-4" href="{{route('logout')}}">Log Out</a>
                     </li>
                 </div>
             </div>

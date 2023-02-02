@@ -25,12 +25,11 @@ class ReservationController extends Controller
         $Reservations = Reservation::get();
         $result = [];
         foreach ($Reservations as $res){
-            
             $res_to_send = [];
             $res_to_send["id"] = $res->id;
-            $service=Service::findorfail($res->Service_Id);
+            $service=$res->Service;
             $res_to_send['Service'] = $service->Service_Name;
-            $user = User::findOrFail($res->User_Id);
+            $user = $res->res_user;
             $res_to_send['User'] = $user->name;
             $res_to_send['location']= $res->City."/".$res->Street_Name."/".$res->Building_Number;
             $res_to_send['Time']= $res->Start_Time." To ".$res->End_Time;
