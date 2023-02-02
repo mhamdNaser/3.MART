@@ -86,34 +86,22 @@
                             <td class="align-middle text-center">{{$item["Total_Price"]}}</td>
                             <td class="align-middle text-center">{{$item["Status"]}}</td>
                             <td class="align-middle text-center">{{$item["Reject_Reason"]}}</td>
+                            @if ($item["Status"] == "Pending") 
+                            
                             <td class="align-middle text-center">
-                                {{-- <div class="d-flex"> --}}
-                                    {{-- <div class="p-1  border border-0">
-                                        <form action="{{route('Reservation.destroy',$item["id"])}}" method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <tr>
-                                            <td colspan="4">
-                                            <input type="text" name="City" id="Category_Name" class="form-control">
-                                            </td>
-                                            </tr>
-                                            <button class="btn btn-danger" type="submit">Delete</button>
-                                        </form>
-                                    </div> --}}
                                     <div class="p-1  border border-0">
                                         <a href="{{route('Reservation.edit',$item["id"]." Confirmed")}}"><button class="btn btn-primary">Confirm</button></a>
                                     </div>
                                     <div class="p-1  border border-0" >
                                         <button class="btn btn-danger" onclick="apper({{$item['id']}})"> Reject </button>
                                     </div>
-                                {{-- </div> --}}
                             </td>
+                            @endif
                         </tr>
                         <tr id="{{$item["id"]}}" style="display: none">
                         <form action="{{route('Reservation.destroy',$item['id'])}}" method="post">
                             @csrf
                             @method('DELETE')
-
                             <td colspan="4">
                             <input type="text" name="resone" id="Category_Name" class="form-control" style="width: 200px" placeholder="Reasons for refusal">
                             </td>

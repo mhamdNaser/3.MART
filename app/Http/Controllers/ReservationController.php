@@ -21,29 +21,24 @@ class ReservationController extends Controller
     public function index()
     {
         //
+
         $Reservations = Reservation::get();
         $result = [];
         foreach ($Reservations as $res){
             $res_to_send = [];
             $res_to_send["id"] = $res->id;
-            $service=Service::findorfail($res->Service_Id);
+            $service=$res->Service;
             $res_to_send['Service'] = $service->Service_Name;
-            $user=User::findorfail($res->User_Id );
+            $user = $res->res_user;
             $res_to_send['User'] = $user->name;
             $res_to_send['location']= $res->City."/".$res->Street_Name."/".$res->Building_Number;
-            // if (!$res->End_Time){
-            //     $res->End_Time = "not yet determined";
-            // }
             $res_to_send['Time']= $res->Start_Time." To ".$res->End_Time;
-            // if (!$res->Total_Price){
-            //     $res->Total_Price = "not yet determined";
-            // }
             $res_to_send['Total_Price']= $res->Total_Price;
             $res_to_send['Status']= $res->Status;
             $res_to_send['Reject_Reason']= $res->Reject_Reason;
             array_push($result,$res_to_send);
         }
-        return view('admin.reservation.showreservation',['Reservations'=>$result]);
+        return view("admin.reservation.showreservation",['Reservations'=>$result]);
     }
 
     /**
@@ -74,8 +69,7 @@ class ReservationController extends Controller
         $new_res["Total_Price"]= ($service->Service_Price);
         $new_res["Service_Id"]= ($request->serviceid);
         $new_res["User_Id"]= Auth::user()->id;
-        // i will convert the date for number of seconds
-        // start time in sec
+        ///////////////////////////////// checks for the resevation time /////////////////////////////////////////
         $date = $request->Start_Time;
         $pattern = "/[-\s:]/";
         $components = preg_split($pattern, $date);
@@ -101,9 +95,6 @@ class ReservationController extends Controller
         // $isResarved=Reservation::find($id);
         $reservations = Reservation::get()->where('Service_Id',$request->serviceid);
         foreach ($reservations as $res) {
-            // $restime =Carbon::parse($res->Start_Time);
-            // if ($restime->format('Y-m-d') == $request_date->format('Y-m-d')) {
-            //     return back()->with('warning','this time is reserved pick another time') ;
             $pattern = "/[-\s:]/";
             $components = preg_split($pattern, $res->Start_Time);
             $res_start_time_sec =($components[0]*95255631) + ($components[1]*2628000) + ($components[2]*86400) + ($components[3]*3600) + ($components[4]*60);
@@ -154,7 +145,7 @@ class ReservationController extends Controller
         $res = Reservation::findorFail($components[0]);
         $res->Status = $components[1];
         $res->save();
-        return  to_route('Reservation.index') ;
+        return  back() ;
     }
 
     /**
@@ -167,7 +158,7 @@ class ReservationController extends Controller
     public function update(Request $request)
     {
         //
-        dd("good");
+        // dd("good");
     }
 
     /**
@@ -184,16 +175,6 @@ class ReservationController extends Controller
         $res->Reject_Reason = $request->resone;
         $res->save();
         return  to_route('Reservation.index') ;
-        // Reservation::findorfail($id)->delete();
-        // return  to_route('Reservation.index')->with('danger','Reservation has Removed') ;
     }
-    // public function cancel($id)
-    // {
-    //     //
-    //     $res = Reservation::findorFail($id);
-    //     $res->Status = "canceld";
-    //     $res->save();
-    //     return  to_route('Reservation.index')->with('success','Reservation has confirmed') ;
-    // }
 
 }

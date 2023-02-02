@@ -8,8 +8,8 @@
     <div class="col-lg-3">
         <form class="d-flex" style="margin-top: -2rem" action="{{ route('search') }}" method="POST">
           @csrf
-            <input class="form-control me-2" type="text" placeholder="Search" name="search">
-            <button class="btn btn-primary" type="submit">Search</button>
+            <input class="form-control me-2" type="text" placeholder="Search">
+            <button class="btn btn-primary" type="button">Search</button>
         </form>
     </div>
   </div>
@@ -21,24 +21,23 @@
       <div class="row">
         {{-- ///////////////////////////// --}}
 
-        @foreach ($collection as $item)
-        <div class="col-sm-6 col-md-4 mx-auto" >
-          <div class="box">
+        @foreach ($results as $item)
+        <div class="col-sm-6 col-md-4 mx-auto">
+          <div class="box" style="min-height: 30em">
             <div class="img-box">
-              <img src="{{URL::asset("storage/serviceimage/$item->Service_Image")}}" alt=""/>
+              <img src="{{URL::asset("storage/serviceimage/$item->Service_Image")}}" alt="" />
             </div>
-            <div class="detail-box" style="min-height: 14em">
+            <div class="detail-box">
               <h5>
                 {{$item->Service_Name}}
               </h5>
               <h6>
-                Service Price : <span class="text-primary fw-bolder">{{$item->Service_Price}} JD</span>
+                Service Price : {{$item->Service_Price}} JD
               </h6>
               <h6>
-                Service Duration : <span class="text-success fw-bolder">{{$item->Service_Duration}} Hours</span>
+                Service Duration : {{$item->Service_Duration}} Hours
               </h6>
-              <hr>
-              <p style="font-size: 14px">
+              <p>
                 {{$item->Service_Description}}
               </p>
             </div>
@@ -48,8 +47,8 @@
               @auth
               <a href="{{route('Reservation.show',$item->id)}}">
                 Book Now
-              </a>
-              @else
+              </a>                   
+              @else  
               <a href="/login">
                 Book Now
               </a>
@@ -95,7 +94,6 @@
             </div>
             </div>
         </div>
-        @endforeach
     </div>
   </section> --}}
 

@@ -11,11 +11,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Reservation extends Model
 {
     use HasFactory ,SoftDeletes;
-    public function user (){
-        return $this->belongsTo(User::class);
-    }
     public function service (){
-        return $this->belongsTo(Service::class);
+        return $this->belongsTo(Service::class,'Service_Id','id');
+    }
+    public function res_user (){
+        return ($this->belongsTo(User::class,'User_Id','id'));
     }
     protected $fillable = [
         'Service_Id',

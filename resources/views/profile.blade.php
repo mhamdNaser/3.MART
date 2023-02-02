@@ -84,9 +84,57 @@
                         <div class="row">
                             Show Reservation
                         </div>
-                    </div>
-                </div>
+                  </div>
+              </div>
           </div>
+          {{--  --}}
+          @foreach ($res as $item)
+          <div class="card mb-4 mb-lg-0">
+            <div class="card-body p-0">
+                <div class="col-lg-8 p-4">
+                        <div class="row">
+                          Service : {{$item->service->Service_Name}}
+                        </div>
+                        <div class="row">
+                          location : {{$item->City}}/{{$item->Street_Name}}/{{$item->Building_Number}}
+                        </div>
+                        <div class="row">
+                          Time : {{$item->Start_Time}} To {{$item->End_Time}} 
+                        </div>
+                        <div class="row">
+                          Price : {{$item->Total_Price}} Jd
+                        </div>
+                        @if ($item->Status == "Pending")
+                        <div class="row" style="color: rgb(161, 161, 31)"> 
+                          Status :{{$item->Status}}
+                        </div>
+                        @endif
+                        @if ($item->Status == "Confirmed")
+                        <div class="row" style="color: green"> 
+                          Status :{{$item->Status}}
+                        </div>
+                        @endif
+                        @if ($item->Status == "Rejected" || $item->Status == "cancelled")
+                        <div class="row" style="color: red"> 
+                          Status :{{$item->Status}}
+                        </div>
+                        @endif
+                        @if ($item->Status == "Rejected")
+                        <div class="row">
+                          Rejected Resones :{{$item->Reject_Reason}}
+                        </div>
+                        @endif
+                        <br>
+                        @if ($item->Status == "Pending" || $item->Status == "Confirmed")
+                        <div class="row">
+                          <a href="{{route('Reservation.edit',$item["id"]." cancelled")}}"><button class="btn btn-danger">Cancel</button></a>
+                        </div>
+                        @endif
+                  </div>
+              </div>
+          </div>  
+          @endforeach
+          {{--  --}}
         </div>
       </div>
     </div>
