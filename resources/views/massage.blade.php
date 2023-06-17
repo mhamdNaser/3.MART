@@ -38,7 +38,7 @@
                                 <p class="text-xs text-secondary mb-0 text-center">{{$message->Name}}</p>
                             </td>
                             <td>
-                                <p class="text-xs text-secondary mb-0 text-center">{{$message->phone_number}}</p>  
+                                <p class="text-xs text-secondary mb-0 text-center">{{$message->phone_number}}</p>
                             </td>
                             <td>
                                 <p class="text-xs text-secondary mb-0 text-center">{{$message->email}}</p>

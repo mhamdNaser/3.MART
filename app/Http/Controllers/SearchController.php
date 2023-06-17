@@ -17,3 +17,4 @@ class SearchController extends Controller
         return view('service', ['collection' =>$results]);
     }
 }
+

@@ -23,26 +23,40 @@ use App\Models\Category;
 use App\Models\Reservation;
 use Illuminate\Support\Facades\Auth;
 
-// Route::get('/', function () {
-//     return view('index');
-// });
-// Route::resource('services', ServiceController::class);
-
 Route::get('/', function () {
-    $all_categories=Category::get();
-    return view('home',["allcategories"=>$all_categories]);
+    $all_categories = Category::get();
+    return view('home', ["allcategories" => $all_categories]);
 });
-// Route::get('/', function () { return view('home'); });
-Route::get('index', function () { return view('index'); });
-Route::get('about', function () { return view('about'); });
-// Route::get('contact', function () { return view('contact'); });
-Route::get('service', function () { return view('service'); });
+
+Route::get('index', function () {
+    return view('index');
+});
+Route::get('about', function () {
+    return view('about');
+});
+Route::get('service', function () {
+    return view('service');
+});
 Route::get('profile', function () {
-    $Reservations = Reservation::Where('User_Id',Auth::user()->id)->get();
-    return view('profile',['res'=>$Reservations]); 
-    });
-Route::get('cart', function () { return view('cart'); });
-Route::get('dashboard', function () { return view('index'); });
+    if( Auth::user()->Role === 'user' ){
+        $Reservations = Reservation::Where('User_Id', Auth::user()->id)->get();
+        return view('profile', ['res' => $Reservations]);
+    }else{
+        return view('index');
+    }
+});
+Route::get('cart', function () {
+    return view('cart');
+});
+Route::get('dashboard', function () {
+    if (Auth::user()->Role === 'admin'){
+        return view('index');
+    }
+    else{
+        $all_categories = Category::get();
+        return view('home', ["allcategories" => $all_categories]);
+    }
+});
 
 
 
@@ -53,7 +67,7 @@ Route::resource('categories', CategoryController::class);
 Route::resource('user', UserController::class);
 
 
-Route::controller(RegisterController::class)->group(function(){
+Route::controller(RegisterController::class)->group(function () {
     Route::get('register', 'create')->name('register');
     Route::post('register', 'store')->name('register');
     Route::get('login', 'index')->name('login');
@@ -62,24 +76,10 @@ Route::controller(RegisterController::class)->group(function(){
     Route::post('logout', 'destroy')->name('logout');
 });
 
-// Route::get('service', function () {
-//     $services = Service::all();
-//     return view('service',["collection"=>$services]);
-// });
-
-// Route::get('contact', function () {
-//     return view('contact');
-// });
-
 Route::get('service', function () {
     $services = Service::all();
-    return view('service',["collection"=>$services]);
+    return view('service', ["collection" => $services]);
 });
-
-// Route::get('dashboard', function () {
-//     return view('index');
-// });
-
 
 Route::resource('Service', ServiceController::class);
 
@@ -88,6 +88,4 @@ Route::resource('categories', CategoryController::class);
 Route::resource('user', UserController::class);
 Route::resource('contact', ContactController::class);
 
-Route::post('/search' , [SearchController::class , 'search'])->name('search');
-
-
+Route::post('/search', [SearchController::class, 'search'])->name('search');
